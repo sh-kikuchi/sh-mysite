@@ -1,0 +1,122 @@
+@media screen and (min-width:600px) {
+  #profile-sheet{
+    height:100%;
+    width:595px;
+    margin:0 auto;
+  }
+}
+@media screen and (max-width:599x) {
+  #profile-sheet{
+    margin:0 auto;
+  }
+}
+
+#profile-sheet{
+  margin-bottom: 16px;
+}
+
+.resume{
+  text-align: center;
+}
+
+.cre_date{
+  display: block;
+  font-size: 13px;
+  text-align: right;
+  margin-bottom: -20px;
+}
+
+.name{
+  width: 70%;
+  float: left;
+}
+
+.kana, .birthday{
+  text-align: center;
+  font-size: 10px;
+}
+
+.kanji{
+  text-align: center;
+  font-size: 25px;
+}
+
+
+.profile-wrapper{
+  border: 1px solid black;
+  background-color: #FFF;
+  padding:5px;
+}
+
+.resume{
+  font-size: 30px;
+  /*margin-bottom: -20px;*/
+}
+
+.name_tbl{
+  width:100%;
+  border-collapse: collapse;
+  border:1px solid black;
+  margin-bottom: 10px;
+}
+.name_tbl td{
+  border-bottom:1px dashed black;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.resume-img{
+  width: 25%;
+  height:25%;
+  margin:auto 0;
+  padding-top: 25px;
+  padding-left: 20px;
+}
+
+.career_tbl{
+  width:100%;
+  border-collapse: collapse;
+  border:1px solid black;
+  margin-bottom: 10px;
+}
+.career_tbl td{
+  font-size: 14px;
+  border-bottom:1px dashed black;
+  border-right:1px solid black;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.hobby_skill_tbl{
+  width:100%;
+  border-collapse: collapse;
+  border:1px solid black;
+  margin-bottom: 10px;
+}
+
+.hobby_skill_tbl ul{
+  list-style: none;
+}
+
+
+.hobby_skill_tbl td{
+  font-size: 14px;
+  border-bottom:1px dashed black;
+  border-right:1px solid black;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.strength_weakness_tbl{
+  width:100%;
+  border-collapse: collapse;
+  border:1px solid black;
+  margin-bottom: 10px;
+}
+.strength_weakness_tbl td{
+  font-size: 14px;
+  width:50px;
+  border-bottom:1px dashed black;
+  border-right:1px solid black;
+  padding-right: 5px;
+  padding-left: 5px;
+}

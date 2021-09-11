@@ -1,0 +1,433 @@
+body{
+  font-family: "Times New Roman";
+}
+
+.about-title, .topic-title, .resume-title, .book-title, .note-title, .link-title{
+  margin-top: 5px;
+}
+
+.contents{
+  width:80%;
+  background-color:#EEEEEE;
+}
+
+.site-name{
+  font-size: 73px;
+  font-family: 'Crimson Text', serif;
+  font-family: 'UnifrakturCook', cursive;
+}
+
+/*---------------------------------
+top
+----------------------------------*/
+.top-title{
+  font-size: 40px;
+  padding-left: 10px;
+}
+
+#top-wrapper{
+  border:2px solid #000000;
+}
+.top-content{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.top-img{
+  width:45%;
+}
+.img-globe{
+  width:100%;
+  margin:0 auto;
+  padding:5px;
+}
+
+.top-text{
+  width:65%;
+  font-size: 18px;
+  padding-right:5px;
+  padding-left:5px;
+}
+
+.first-character{
+  font-size: 25px;
+}
+
+.into-ja{
+  font-size: 14px;
+}
+
+
+/*---------------------------------
+about me
+----------------------------------*/
+#about-wrapper{
+  width:60%;
+  height: 380px;
+  float: left;
+  border: 1px solid #000000;
+}
+
+.my-name{
+  margin:5px 3px;
+}
+
+.about-content{
+  height: 100%;
+}
+
+.about-text table{
+  padding-left: 10px;
+}
+.about-text td:nth-child(1){
+  width:70px;
+}
+.about-text td:nth-child(2){
+  width:550px;
+}
+
+.article-list p{
+  margin-top: 10px;
+  text-align: center;
+  background-color: #cdcdcd;
+}
+.article-list ol{
+  padding-left:35px;
+}
+
+/*CiNiiのボタンをつくる。*/
+.about-link{
+  width:150px;
+  text-align: center;
+  background-color: #20b2aa; /*lightseagreen*/
+  margin: 10px auto;
+  border-radius: 15px;
+}
+.about-link a{
+  display: block;
+  font-size: 16px;
+  color:#FFFFFF;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+/*---------------------------------
+topic
+----------------------------------*/
+#topic-wrapper{
+  width:40%;
+  height: 380px;
+  float: right;
+  border: 1px solid #000000;
+  overflow-y: scroll; /* IE, Edge 対応 */
+  -ms-overflow-style: none; /* Firefox 対応 */
+  scrollbar-width: none;
+}
+/* Chrome, Safari 対応 */
+ #topic-wrapper::-webkit-scrollbar {
+    display:none;
+}
+
+.topics{
+  padding-left:10px;
+  padding-bottom: 5px;
+
+}
+
+
+#langChenge input[type="radio"]{
+  display    : none;
+}
+
+/* === 各ラジオボタンのラベルをボタンに変更 == */
+#langChenge label{
+  display    : inline-block;
+  float: right;
+  border     : 1px solid #ccc;
+  box-shadow : 2px 2px #999;
+  padding    : 2px 6px 0px 5px;
+  margin:5px 5px 5px auto;
+}
+
+ /* === 選択されていない言語は非表示にする ==== */
+#langJa:not(:checked) ~ * *:lang(ja) {
+  display    : none;
+}
+#langEn:not(:checked) ~ * *:lang(en) {
+  display    : none;
+}
+#langZh:not(:checked) ~ * *:lang(zh) {
+  display    : none;
+}
+
+ /* === 選択されている言語のラベル色を変更 ==== */
+#langJa:checked ~ label[for="langJa"] {
+  background : #ffa64d;
+}
+#langEn:checked ~ label[for="langEn"] {
+  background : #ffa64d;
+}
+#langZh:checked ~ label[for="langZh"] {
+  background : #ffa64d;
+}
+
+/*---------------------------------
+theme
+----------------------------------*/
+#theme-wrapper{
+  width:100%;
+  border:1px solid #000000;
+  clear: both; /*周りこみを解除（両側）*/
+}
+
+h2{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.text{
+  columns: 3;
+	column-rule: 1px solid #cdcdcd;
+  column-gap: 2em;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: left;
+}
+
+/*---------------------------------
+resume
+----------------------------------*/
+#resume-wrapper{
+  border:1px solid #000000;
+}
+
+.resume-frame{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.prewar{
+  width: 50%;
+}
+.postwar{
+  width: 50%;
+}
+.arrows{
+  display: block;
+  margin: 0 0 0 auto;
+}
+.resume-menu{
+  background-color: coral;
+}
+
+
+.menu-link{
+  background-color:rgba(0,30,67,0.7);
+}
+
+.menu-title{
+  font-size:16px;
+  color:#FFFFFF;
+  text-align: center;
+}
+
+.menu-about{
+  font-size:12px;
+  color:#FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+
+
+.header-menu{
+  display: none;
+}
+
+.menu li{
+ list-style: none;
+}
+
+
+.menu-item a{
+ display:block;
+ color:#000000;
+ background-color:#EEEEEE;
+ font-size:20px;
+ padding:7.5px 0 7.5px 25px;
+ text-decoration: none;
+}
+
+.menu-item a:hover{
+  color:#FFFFFF;
+  background-color: #eb3c55;
+}
+
+.slick-slide {
+  text-align: center;
+}
+
+
+
+/*---------------------------------
+book
+----------------------------------*/
+#book-wrapper{
+  width:60%;
+  border:1px solid #000000;
+  float: left;
+  height: 600px;
+}
+
+.book-text{
+  padding:40px 20px 40px 20px;
+  text-align: center;
+}
+
+.book-title{
+  font-size: 24px;
+}
+
+.book-about{
+  margin-top: 16px;
+  padding: 16px;
+  border:1px solid #eb3c55;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.book-review{
+  width:200px;
+  float:right;
+  padding-top: 10px;
+}
+
+#note-wrapper{
+  width:40%;
+  height: 600px;
+  float:right;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  overflow-y: scroll; /* IE, Edge 対応 */
+  -ms-overflow-style: none; /* Firefox 対応 */
+  scrollbar-width: none;
+}
+  /* Chrome, Safari 対応 */
+ #note-wrapper::-webkit-scrollbar {
+    display:none;
+}
+
+
+.note-title h4{
+  text-align: center;
+}
+
+.note-frame{
+  width:100%;
+}
+
+.note-card{
+  width:100%;
+  height:250px;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-collapse: collapse;
+}
+.card-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-title{
+  width:300px;
+  margin: 5px 5px 5px 0;
+}
+
+
+.note-card textarea{
+  resize:none;
+  font-size: 14px;
+  /*width:390px;*/
+  color:#000000;
+  width:100%;
+  height:150px;
+  margin:0 auto;
+  padding:5px;
+  overflow-y: scroll; /* IE, Edge 対応 */
+  -ms-overflow-style: none; /* Firefox 対応 */
+  scrollbar-width: none;
+}
+
+.note-card textarea::-webkit-scrollbar {
+    display:none;
+}
+
+
+
+.note-card img{
+  border-radius: 50%;
+  margin-top:10px;
+  margin-left:10px;
+}
+
+.updated-at{
+  text-align: right;
+  margin-right: 5px;
+}
+
+
+
+
+
+
+/*---------------------------------
+links
+----------------------------------*/
+#link-wrapper{
+  padding-top: 10px;
+  padding-bottom: 15px;
+  clear:both;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+
+}
+#link-wrapper table{
+  width:99%;
+  border-collapse: collapse;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+#link-wrapper th{
+  background-color: #808080;
+  text-align: center;
+}
+#link-wrapper td{
+  border: 1px solid #000000;
+}
+#link-wrapper td a{
+  display: block;
+  color:#000000;
+  text-align: center;
+  text-decoration: none;
+}
+#link-wrapper td a:hover{
+  color:#FFFFFF;
+  background-color: #eb3c55;
+}
+#link-wrapper td:nth-child(1) {
+  width:11%;
+  text-align: center;
+}
+#link-wrapper td:nth-child(2) {
+  width:22%;
+}
+#link-wrapper td:nth-child(3) {
+  width:66%;
+}

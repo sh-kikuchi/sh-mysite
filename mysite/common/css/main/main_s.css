@@ -1,0 +1,593 @@
+.content-wrapper{
+   text-align: center;
+}
+
+.underbar-color{
+  width:150px;
+  height: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.under-profile{
+  background-color: #0033FF;
+}
+.under-book{
+  background-color: #003399;
+}
+.under-trip{
+  background-color: #333399;
+}
+.under-music{
+  background-color: #660099;
+}
+.under-live{
+  background-color: #cc0000 ;
+}
+.under-contact{
+  background-color:#eb3c55;
+}
+
+body{
+  background:url(../../img/bg.gif) repeat;
+  margin:0;
+}
+/*------------------------------------
+commonに移動
+A_ヘッダー
+1_スマホ用の時はグロナビ非表示
+2_ハンバーガーメニューの位置指定
+3_transition
+4_nth-child
+------------------------------------*/
+
+
+/*------------------------------------
+B_TOPページ
+1_背景画像の設定
+2_height(vh)
+------------------------------------*/
+#top{
+  background-image:url(../../img/main/akita_winter.jpg);  /*【B-1】背景画像*/
+  background-size: cover;                            /*【B-1】画面いっぱいに表示*/
+  height: 100vh;                    /*【B-2】100vhは全てのデバイスの高さ分、表示*/
+}
+.top-wrapper{
+  width:100%;
+  height: 100vh;
+  margin:0 auto;
+  position:relative; /*【B-】縦中央配置*/
+}
+.top_txt{
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  position: absolute; /*【B-】縦中央配置*/
+  top:50%;            /*【B-】縦中央配置*/
+  left:5%;
+}
+.top_txt .the{
+  display: inline-block;
+  font-size: 40px;
+  color: red;
+  text-align: center;
+  line-height: 60px;
+  width: 60px;
+  height: 60px;
+  background-image: linear-gradient(to left top,
+      transparent 49%,
+      black 49%,
+      black 51%,
+      transparent 51%);
+}
+.top_txt .period{
+  color:#ff0000;
+}
+
+/*------------------------------------
+C_Profile
+1_横並びにする（復習）
+2_表を作る
+------------------------------------*/
+#profile{
+  padding-top:70px; /*セクション間の距離*/
+  background: linear-gradient(to bottom, rgba(245,245,245,0.5),rgba(220,220,220,0.5));/*whitesmoke,gainsboro*/
+}
+.profile-card{
+  width:100%;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  border-radius: 15px;
+  margin:0 auto;
+  background-color: #fff;
+}
+
+.profile-info p{
+  border-bottom: 1px solid #000000;
+}
+
+.profile-img{
+  margin:0 auto;
+  text-align: center;
+}
+.profile-img img{
+  width:100%;
+}
+
+
+
+.profile-text ul{
+  margin:0 auto;
+  text-align: center;
+  border-bottom: 1px solid #000000;
+}
+
+.profile-text table{
+  width:100%;
+
+}
+
+
+.profile-text table td{
+  display:block;
+   width:100%;
+   background-color: #fff;
+}
+
+.td-bottom-radius{
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.profile-text table a{
+  display: block;
+  color:#333;
+  text-decoration: none;
+  text-align: center;
+}
+
+.profile-text table a:hover{
+  color:#ffffff;
+  background-color: crimson;
+}
+
+.td-bottom-radius a:hover{
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+
+.profile-text table tr:nth-child(1){
+  display:none;
+}
+
+
+.profile-button{
+  display: block;
+  width:150px;
+  font-size: 40px;
+  margin:15px auto;
+  border: 1px solid #000000;
+  text-decoration: none;
+}
+
+/*------------------------------------
+D_Recommend Books
+1_画像をブロック要素にすることでサイズ設定可
+2_縦中央配置（margin topとbottomのセット)
+3_テキストの右/中央/左揃え（text-align)
+4_ボタンを作る
+------------------------------------*/
+#book{
+  background: linear-gradient(to bottom,rgba(220,220,220,0.5),rgba(211,211,211,0.5));
+  padding-top:70px;
+  padding-bottom:60px;
+}
+
+.book-container{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.book-box{
+  display:none;
+}
+
+.book-box.active{
+  display: block;
+  width:95%;
+  margin:0 auto;
+}
+
+.book-image{
+  display:block; /*【D―1】ブロック要素へ変更*/
+  width:50%;     /*【D―1】サイズ設定*/
+  border-radius: 10px;
+  margin:0 auto;
+  margin-top:auto;     /*【D―2】縦中央配置*/
+  margin-bottom: auto; /*【D―2】縦中央配置*/
+}
+
+.book-text{
+  padding-top:40px;
+  text-align: center;
+}
+
+.book-profile-text{
+  font-size: 24px;
+}
+
+.book-about{
+  width:100%;
+  margin-top: 8px;
+  padding: 16px;
+  border:1px solid #eb3c55;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.book-review a {
+  font-family: 'KoHo', sans-serif;
+  font-size: 18px;
+  display: inline-block;
+  padding: 10px 10px;
+  text-decoration: none;
+  background: #1E36C7;
+  color: #ffffff;
+  border-bottom: 4px solid midnightblue;
+  border-right: 2px solid midnightblue;
+  border-radius: 5px;
+}
+
+.book-review a:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+  -webkit-transform: translateX(2px);
+  transform: translateX(2px);
+  border-right: none;
+}
+
+/*---【D-4】ボタンを作る手順------------------
+1）.book-boxと同じ高さ見えない範囲領域を作る
+2）その中心に線のもとにある正方形を作成
+3）上部の線だけ色を付ける。
+4) 中央配置
+5）戻るボタンは-45°、進むボタンは45°傾け、
+もう一辺をそれぞれの要素に設定する
+--------------------------------------------*/
+
+.button{
+  position: absolute;
+  top:150px;      /*【D-4】.book-boxと同じ高さ見えない範囲領域*/
+  display: block;
+  content: '';
+  width:40px;
+  height:40px;
+  border-top: 2px solid #000; /*【D-4】その中心に線のもとにある正方形を作成*/
+  margin:0 25px;
+  cursor:pointer;
+  z-index: 1;
+}
+
+.prev{
+  left: 10px;
+  border-left: 2px solid #000;
+  transform:rotate(-45deg); /*【D-4】戻るボタンは-45°*/
+}
+
+.next{
+  right: 10px;
+  border-right: 2px solid #000;
+  transform:rotate(45deg);  /*【D-4】進むボタンは45°*/
+}
+
+/*------------------------------------
+E_trip
+------------------------------------*/
+#trip{
+  background: linear-gradient(to bottom,rgba(211,211,211,0.5),rgba(192,192,192,0.5));
+}
+
+
+/*ラインナップタブ*/
+.trip-lineup{
+  max-width: 100%;
+  margin:0px auto;
+  margin-bottom: 16px;
+}
+
+
+.trip-lineup ul{
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content:space-between;
+  padding-top: 20px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.trip-lineup ul li{
+  display: block;
+  width: 100%;
+  height: 32px;
+  text-align: center;
+  list-style: none;
+  border: 1px solid #000000;
+  background-color: #fff;
+}
+
+.trip-lineup ul li a{
+  display: block;
+  font-size: 10px;
+  text-decoration: none;
+  color: #333;
+  width: 100%;
+  height:100%;
+}
+
+.trip-lineup ul li a:hover{
+  color: #fff;
+  background-color: #eb3c55;
+  transition: 0.1s;
+}
+
+/*ラインナップボックス*/
+.trip-wrapper{
+ width: 100%;
+ display:flex;
+ flex-wrap: wrap;
+ margin:0px auto;
+}
+
+.trip-image{
+  width:100%;
+}
+
+.trip-about{
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.trip-date{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*モーダルのスタイル*/
+.modal-main{
+  display: none;
+}
+
+.modalOpen{
+  display: block;
+}
+
+.modal-inner{
+  width:100%;
+  height:100%;
+  background-color:#ffffff;
+  color:#666666;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:3;
+}
+
+.modal-content{
+  text-align: center;
+  margin:0;
+  padding:0;
+}
+
+.modal-title{
+  padding-top: 40px;
+  margin-bottom: 32px;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.modal-image{
+  width:60%;
+  margin:0 auto;
+  margin-bottom:10px;
+  vertical-align: bottom;
+}
+
+
+.modal-text{
+  font-size:16px;
+  width:70%;
+  text-align: center;
+  margin:0 auto;
+  margin-bottom:20px;
+}
+
+.modalClose{
+  display: inline-block;
+  padding: 20px 40px;
+  background-color:#00afcc;
+  font-size:18px;
+  color:#fff;
+  text-decoration: none;
+}
+
+.modalClose:hover{
+  color:#00afcc;
+  background-color:#e4e0e1;
+  transition: 0.6s;
+}
+
+
+/*ラインナップ*/
+@media screen and (max-width: 511px) {
+  .trip-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .trip-content{
+    width: 33%;
+    margin-bottom: 3px;
+  }
+}
+
+
+@media screen and (min-width: 512px) {
+  .trip-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .trip-content{
+     width: 33%;
+     margin: 0 auto;
+     margin-bottom: 3px;
+  }
+}
+
+/*------------------------------------
+F_music
+------------------------------------*/
+.play-list{
+  margin-bottom: 10px;
+}
+
+#music{
+  background: linear-gradient(to bottom,rgba(192,192,192,0.5),rgba(169,169,169,0.5));
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+
+/*------------------------------------
+G_LIVE
+------------------------------------*/
+#live{
+  background: linear-gradient(to bottom,rgba(169,169,169,0.5),rgba(128,128,128,0.5));
+}
+
+.live-wrapper{
+  width:100%;
+  margin: 0 auto;
+  border:1px solid #333;
+  border-radius: 15px;
+}
+
+.live-map{
+  width:100%;
+  border-radius: 15px;
+}
+
+.live-text{
+  text-align: center;
+  float:center;
+  padding-bottom: 30px;
+}
+
+.site-name{
+  font-size: 40px;
+}
+
+.address{
+  margin-top:24px;
+  font-size:16px;
+}
+
+.site-tel{
+ display: none;
+}
+
+.live-list{
+  display: block;
+  padding: 10px;
+  margin:5px auto;
+  text-decoration: none;
+  background-color: #ff0000;
+  border: 1px solid #ff0000;
+  color:#ffffff;
+}
+
+
+/*------------------------------------
+G_Contact
+------------------------------------*/
+#contact{
+  padding-top:70px;
+  background: linear-gradient(to bottom,rgba(128,128,128,0.5),rgba(105,105,105,0.5));
+}
+
+.contact-wrapper{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact-text{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+form{
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.form-group{
+  display: flex;
+  flex-flow: column;
+  margin-top: 32px;
+  width: 300px;
+}
+
+.form-name, .form-mail{
+  border: 1px solid #000000;
+  width: 300px;
+  height: 40px;
+}
+
+
+
+
+.send-button{
+  margin-top: 20px;
+  border: 1px solid #000;
+  padding:15px;
+}
+.send-button:hover{
+  color: #fff;
+  background-color: #ff0000;
+}
+/* セレクトタグ */
+.form-group-select {
+	overflow: hidden;
+	width: 300px;
+  text-align: center;
+
+}
+.form-group-select select {
+	width: 300px;
+	padding-right: 10px;
+  background-color: #fff;
+	cursor: pointer;
+  border-radius: 5px;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	outline: none;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.form-group-select select::-ms-expand {
+  display: none;
+}
+#request-about{
+  background-color: #ffffff;
+  border:1px solid #333;
+  border-radius: 5px;
+}
+
+.form-mail, .form-name, #form-group{
+  height:30px;
+  background-color: #ffffff;
+  border:1px solid #333;
+  border-radius: 5px;
+}

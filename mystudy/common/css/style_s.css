@@ -1,0 +1,140 @@
+html,body{
+ overflow-x: hidden!important;
+ overflow-y: scroll;
+ /* -webkit-overflow-scrolling: touch; */
+  width:100%;
+  font-family: "Times New Roman";
+}
+
+header{
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.site-name{
+  font-size: 45px;
+  font-family: 'Crimson Text', serif;
+  font-family: 'UnifrakturCook', cursive;
+}
+
+.signature{
+  font-size: 24px;
+  font-family: 'Crimson Text', serif;
+  font-family: 'Parisienne', cursive;
+  text-align: right;
+}
+
+footer{
+  height:180px;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.footer-name{
+  font-size:20px;
+  font-family: 'Crimson Text', serif;
+  font-family: 'UnifrakturCook', cursive;
+  padding-top:10px;
+}
+
+
+/*---------------------------------
+ハンバーガーメニュー
+----------------------------------*/
+/*jQueryで非表示から表示にする*/
+.g_nav{
+ display: none;
+}
+
+.g_nav {
+  position:fixed;
+  z-index:99;
+  top:0;
+  left:0;
+  background: #fff;
+  color:#000;
+  text-align: center;
+  width:60%;
+  height:100%;
+  transform:translateX(-100%);
+  transition: all 0.6s;
+}
+
+.g_nav ul li{
+  font-size:18px;
+  list-style-type: none;
+  width:100%;
+}
+
+.g_nav ul li:last-child{
+  border-bottom:none;
+}
+
+.g_nav ul li a{
+  display: block; /*クリック出来る範囲を広げる*/
+  color:#000;
+  padding:20px 0;
+  text-decoration: none;
+}
+
+.g_nav.active{
+  transform:translateX(0%);
+}
+
+/*ハンバーガーメニュー*/
+.menu-trigger{
+  position: fixed; /*【A-2】bodyに対する絶対位置指定*/
+  right: 5%; /*【A-2】右上に配置*/
+  top:   5%; /*【A-2】右上に配置*/
+  width:50px;
+  height:42px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.menu-trigger span {
+  display: block; /*インラインからブロック*/
+  position: absolute;
+  width: 50px;
+  border-bottom: solid 4px #000;
+  border-radius: 4px;
+  transition: .35s ease-in-out;    /*【A-3】変化の速度を指定*/
+}
+
+.menu-trigger span:nth-child(1){ /*【A-4】:nth-child擬似クラス*/
+  top:0;
+}
+.menu-trigger span:nth-child(2){
+  top:13px;
+}
+.menu-trigger span:nth-child(3){
+  top:26px;
+}
+
+/*✕マーク*/
+.menu-trigger.active span:nth-child(1){
+  top:18px;
+  transform:rotate(-45deg);
+}
+
+.menu-trigger.active span:nth-child(2),
+.menu-trigger.active span:nth-child(3){
+  top:18px;
+  transform:rotate(45deg);
+}
+
+.about-site{
+  width:150px;
+  text-align: center;
+  background-color: #20b2aa; /*lightseagreen*/
+  margin: 10px auto;
+  border-radius: 15px;
+}
+.about-site a{
+  display: block;
+  font-size: 16px;
+  color:#FFFFFF;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

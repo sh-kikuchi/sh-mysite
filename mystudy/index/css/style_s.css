@@ -1,0 +1,408 @@
+
+.about-title, .topic-title, .resume-title, .book-title, .note-title, .link-title{
+  margin-top: 5px;
+}
+
+.my-name{
+  margin:5px 3px;
+}
+
+/*---------------------------------
+top
+----------------------------------*/
+.top-title{
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+#top-wrapper{
+  border:2px solid #000000;
+}
+
+.img-globe{
+  width:100%;
+  margin:0 auto;
+  padding:5px;
+}
+
+.top-text{
+  font-size: 14px;
+  padding-right:5px;
+  padding-left:5px;
+}
+
+.first-character{
+  font-size: 25px;
+}
+
+.into-ja{
+  font-size: 12px;
+}
+
+/*---------------------------------
+sidebar
+----------------------------------*/
+.sidebar{
+  display: none;
+}
+
+.view_todayE{
+  background-color:#78547c;
+  color: #FFFFFF;
+  font-size:20px;
+  text-align: center;
+  height:95px;
+}
+
+.menu-bar{
+  position: fixed;
+  top:0;
+  right:0;
+}
+
+.contents{
+  background-color:#EEEEEE;
+}
+
+.menu-bar li{
+  border: 1px solid #000000;
+  list-style: none;
+}
+.menu-bar li a:hover{
+  color:#FFFFFF;
+  background-color: #eb3c55;
+}
+
+.menu-bar a{
+ display: block;
+ color:#000000;
+ text-decoration:none;
+ list-style: none;
+ text-align: center;
+ padding: 10px 0;
+}
+
+/*---------------------------------
+about me
+----------------------------------*/
+#about-wrapper{
+  height: 100%;
+  float: left;
+  border: 1px solid #000000;
+}
+
+.about-text table{
+  padding-left: 10px;
+}
+.about-text td:nth-child(1){
+  width:70px;
+}
+.about-text td:nth-child(2){
+  width:550px;
+}
+
+.article-list p{
+  margin: 20px;
+  text-align: center;
+  background-color: #cdcdcd;
+}
+.article-list ol{
+  padding-left:35px;
+}
+
+/*CiNiiのボタンをつくる。*/
+.about-link{
+  width:150px;
+  text-align: center;
+  background-color: #20b2aa; /*lightseagreen*/
+  margin: 10px auto;
+  border-radius: 15px;
+}
+.about-link a{
+  display: block;
+  font-size: 16px;
+  color:#FFFFFF;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*---------------------------------
+topic
+----------------------------------*/
+#topic-wrapper{
+  border: 1px solid #000000;
+  overflow-y: scroll; /* IE, Edge 対応 */
+  -ms-overflow-style: none; /* Firefox 対応 */
+  scrollbar-width: none;
+  height: 150px;
+}
+/* Chrome, Safari 対応 */
+ #topic-wrapper::-webkit-scrollbar {
+    display:none;
+}
+
+
+.topics{
+  padding-left:10px;
+  padding-bottom: 5px;
+}
+
+#langChenge input[type="radio"]{
+  display    : none;
+}
+
+/* === 各ラジオボタンのラベルをボタンに変更 == */
+#langChenge label{
+  display    : inline-block;
+  border     : 1px solid #ccc;
+  box-shadow : 2px 2px #999;
+  padding    : 2px 6px 0px 5px;
+  margin:5px 5px 5px auto;
+}
+
+ /* === 選択されていない言語は非表示にする ==== */
+#langJa:not(:checked) ~ * *:lang(ja) {
+  display    : none;
+}
+#langEn:not(:checked) ~ * *:lang(en) {
+  display    : none;
+}
+#langZh:not(:checked) ~ * *:lang(zh) {
+  display    : none;
+}
+
+ /* === 選択されている言語のラベル色を変更 ==== */
+#langJa:checked ~ label[for="langJa"] {
+  background : #ffa64d;
+}
+#langEn:checked ~ label[for="langEn"] {
+  background : #ffa64d;
+}
+#langZh:checked ~ label[for="langZh"] {
+  background : #ffa64d;
+}
+
+/*---------------------------------
+theme
+----------------------------------*/
+#theme-wrapper{
+  border:1px solid #000000;
+  clear: both; /*周りこみを解除（両側）*/
+}
+
+h2{
+  text-align: center;
+}
+
+.text{
+  font-size: 14px;
+  text-align: left;
+  columns: 1;
+	column-rule: 1px solid #cdcdcd;
+  column-gap: 2em;
+  margin-top:10px;
+  padding-right:5px;
+  padding-left:10px;
+  text-align: left;
+}
+
+/*---------------------------------
+resume
+----------------------------------*/
+#resume-wrapper{
+  border:1px solid #000000;
+}
+
+.arrows{
+  display: block;
+  margin: 0 0 0 auto;
+}
+.resume-menu{
+  background-color: coral;
+}
+
+.menu-link{
+  background-color:rgba(0,30,67,0.7);
+}
+
+.menu-title{
+  font-size:16px;
+  color:#FFFFFF;
+  text-align: center;
+}
+
+.menu-about{
+  font-size:12px;
+  color:#FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.header-menu{
+  display: none;
+}
+
+.menu li{
+ list-style: none;
+}
+
+
+.menu-item a{
+ display:block;
+ color:#000000;
+ background-color:#EEEEEE;
+ font-size:20px;
+ padding:7.5px 0 7.5px 25px;
+ text-decoration: none;
+}
+
+.menu-item a:hover{
+  color:#FFFFFF;
+  background-color: #eb3c55;
+}
+
+.slick-slide {
+  text-align: center;
+}
+
+
+/*---------------------------------
+book
+----------------------------------*/
+#book-wrapper{
+  border:1px solid #000000;
+  float: left;
+}
+
+.book-text{
+  padding:40px 20px 40px 20px;
+  text-align: center;
+}
+
+.book-title{
+  font-size: 24px;
+}
+
+.book-about{
+  margin-top: 16px;
+  padding: 16px;
+  border:1px solid #eb3c55;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.book-review{
+  width:200px;
+  float:right;
+  padding-top: 10px;
+}
+
+#note-wrapper{
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  overflow-y: scroll; /* IE, Edge 対応 */
+  -ms-overflow-style: none; /* Firefox 対応 */
+  scrollbar-width: none;
+}
+  /* Chrome, Safari 対応 */
+ #note-wrapper::-webkit-scrollbar {
+    display:none;
+}
+
+
+.note-title h4{
+  text-align: center;
+}
+
+.note-frame{
+  width:100%;
+}
+
+.note-card{
+  position: relative; /*画像との位置関係*/
+  width:100%;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-collapse: collapse;
+}
+.card-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-title{
+
+   margin: 5px 5px 5px 0;
+}
+
+
+.note-card textarea{
+  resize:none;
+  /*width:390px;*/
+  color:#000000;
+  width:100%;
+  height:150px;
+  margin:0 auto;
+  padding:5px;
+  overflow-y: scroll; /* IE, Edge 対応 */
+  -ms-overflow-style: none; /* Firefox 対応 */
+  scrollbar-width: none;
+}
+.note-card textarea::-webkit-scrollbar {
+    display:none;
+}
+
+.note-card img{
+  border-radius: 50%;
+  margin:10px 10px 0px 10px;
+}
+
+.updated-at{
+  text-align: right;
+  padding-right: 5px;
+}
+
+/*---------------------------------
+links
+----------------------------------*/
+#link-wrapper{
+  padding-top: 10px;
+  padding-bottom: 15px;
+  clear:both;
+}
+#link-wrapper table{
+  width:95%;
+  border-collapse: collapse;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size:10px;
+
+}
+#link-wrapper th{
+  background-color: #808080;
+  text-align: center;
+}
+#link-wrapper td{
+  border: 1px solid #000000;
+}
+#link-wrapper td a{
+  height:100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: block;
+  color:#000000;
+  text-align: center;
+  text-decoration: none;
+}
+#link-wrapper td a:hover{
+  color:#FFFFFF;
+  background-color: #eb3c55;
+}
+
+#link-wrapper td:nth-child(2) {
+  width:30%;
+}
+#link-wrapper td:nth-child(3) {
+  width:76%;
+}

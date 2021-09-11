@@ -1,0 +1,167 @@
+body{
+  background:url(../../img/bg.gif) repeat;
+}
+
+.header-color{
+  display:inline-block;
+  width:12px;
+  height: 35px;
+  background-color: rgba(247,64,60);
+}
+
+.header-title{
+  display:inline-block;
+  font-size:40px;
+}
+
+#concert-wrapper{
+   background: linear-gradient(to bottom, rgba(245,245,245,0.5), rgba(105,105,105,0.5));
+}
+
+.mytable{
+  max-width:1024px;
+  font-size: 12px;
+}
+
+/*スマホ*/
+@media screen and (max-width: 511px) {
+  .mytable{
+    width:365px;
+    font-size: 6px;
+  }
+}
+
+/*タブレット*/
+@media screen and  (min-width:768px) and ( max-width:1024px) {
+  .mytable{
+    width:765px;
+    font-size: 9px;
+  }
+}
+
+/*PC*/
+@media screen and (min-width: 1024px) {
+  .mytable{
+    width: 1021px;
+    font-size: 12px;
+  }
+}
+
+
+
+.col_date{
+  width:10%;
+}
+
+.col_concert_name{
+  width:35%;
+}
+
+.col_name{
+   width:20%;
+}
+.col_place{
+  width:20%;
+}
+
+.col_concert_format{
+   width:15%;
+}
+
+
+.back {
+  width:200px;
+  display:block;
+  text-decoration: none;
+  color: #000000;
+  background-color: #808080;
+  border-color: #000000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+/*====================list========================*/
+.search{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#stxt{
+  width:300px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.list_add{
+  width:150px;
+  display: block;
+  padding: 10px;
+  margin:15px auto;
+  background-color: #3D3345;
+  color: #FFF;
+  border: 1px solid #3D3345;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.mytable{
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.mytable td,tr{
+ text-align: center;
+ border:1px solid #000000;
+ border-collapse: collapse;
+ padding:0 5px;
+}
+
+/*create_form_artists create_form*/
+.concert-wrapper{
+  height: 150vh;
+  background:url(../../img/bg.gif) repeat;
+}
+
+/*ライブ履歴の「一覧にない場合はコチラ」*/
+.artist_id a{
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+
+#content{
+  margin: 10px auto;
+  text-align: center;
+}
+
+.form_input{
+  margin-top: 10px;
+}
+
+.form_input input,select{
+  display: block;
+  width:300px;
+  border: 1px solid #000000;
+  margin: 10px auto;
+  background-color: #FFF;
+}
+
+.form_create_btn{
+  width:150px;
+  display: block;
+  padding:10px;
+  margin: 20px auto;
+  background-color: #191970;
+  color: #FFF;
+  border: 1px solid #191970;
+  border-radius: 5px;
+}
+.form_return_btn{
+  margin-top:20px;
+}
