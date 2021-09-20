@@ -364,7 +364,8 @@ E_trip
 }
 
 .trip-content{
-  width:15%;
+  width:15vw;
+  height:15vw;
 }
 
 .trip-image{
