@@ -424,7 +424,8 @@ E_trip
     flex-wrap: wrap;
   }
   .trip-content{
-    width: 33%;
+    width: 33vw;
+    height: 33vw;
     margin-bottom: 3px;
   }
 }
@@ -436,7 +437,8 @@ E_trip
     flex-wrap: wrap;
   }
   .trip-content{
-     width: 33%;
+     width: 33vw;
+     height: 33vw;
      margin: 0 auto;
      margin-bottom: 3px;
   }
