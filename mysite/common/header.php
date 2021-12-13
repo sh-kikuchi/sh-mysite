@@ -55,7 +55,7 @@
                     <li class="menu"><a href="/mysite/main/index.php#music">Music</a></li>
                     <li class="menu"><a href="/mysite/main/index.php#live">Concerts</a></li>
                     <li class="menu"><a href="/mystudy/index/index.php">Study</a></li>
-                    <li class="menu"><a href="/mywork/index.html">Work</a></li>
+                    <li class="menu"><a href="https://sh-revue.net/">Work</a></li>
                     <li class="menu"><a href="/mysite/main/index.php#contact">Contact</a></li>
                 </ul>
             </div>

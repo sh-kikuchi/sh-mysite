@@ -1,5 +1,5 @@
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/Mystudy/common/header.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/mystudy/common/header.php');?>
 
   <section id = About-site>
   <h1 class="title">■このサイトについて</h1>
@@ -16,5 +16,5 @@
 
 
 </body>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/Mystudy/common/footer.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/mystudy/common/footer.php');?>
 </html>
