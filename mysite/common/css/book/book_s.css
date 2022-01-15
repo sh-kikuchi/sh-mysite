@@ -91,7 +91,6 @@ body{
     margin-top: 5px;
     margin-bottom: 5px;
   }
-
 }
 
 /*スマホ*/
@@ -133,6 +132,7 @@ body{
   font-size: 20px;
   margin:0 auto;
   border-radius: 5px;
+  margin-bottom:30px;
 }
 #book_review .submit:hover{
   background-color:  #ffa500;

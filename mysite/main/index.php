@@ -79,7 +79,7 @@
               <div class="title-content">
                 <p class="content-header">EPISODE V<br>Vampire Strikes Back</p><br>
 
-                  <p class="content-body">In the year MMXX, the invasion of the COVID-19 army has forced a change in lifestyle. A young man bitten by a vampire at the age of 20 is training hard every day to awaken "The NERD FORCE". However, Impulse of unknown cause Flew him into the wilderness. He only weighs the equivalent of three apples. Confronted with his own dark side, he was forced to travel in search of a new base. While the world is surrounded by the horrors of the COVID-19 army, he searches for a place where his own will shows, but he has yet to find that freedom. It seems that it will take some time for the Force to awaken. However, hope was not lost. At a relay station, he found documents leading to Force Awakening.It was difficult to handle, but he made it his skill before facing the COVID-19 army again, and waited for the time to fight back.
+                  <p class="content-body">In the year MMXX, the invasion of the COVID-19 army has forced a change in lifestyle. A young man bitten by a vampire at the age of 20 is training hard every day to awaken "The NERD FORCE". However, Impulse of unknown cause flew him into the wilderness. He only weighs the equivalent of three apples. Confronted with his own dark side, he was forced to travel in search of a new base. While the world is surrounded by the horrors of the COVID-19 army, he searches for a place where his own will shows, but he has yet to find that freedom. It seems that it will take some time for the Force to awaken. However, hope was not lost. At a relay station, he found documents leading to Force Awakening.It was difficult to handle, but he made it his skill before facing the COVID-19 army again, and waited for the time to fight back.
                   </p>
                 <!-- button or link or whatever
                 <p></p>
@@ -219,11 +219,11 @@
           <!--google map埋め込み-->
           <iframe class="live-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1620.8210141833863!2d139.7273144!3d35.6611903!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb47d261864b68591!2sEX%20THEATER%20ROPPONGI!5e0!3m2!1sja!2sjp!4v1616053984748!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           <div class="live-text">
-            <p class="artist">minus(-)</p>
-            <p class="live-name">Null /nʌl/ -minus(-) the last act-</p>
-            <p class="site-name">EX THEATER ROPPONGI</p>
-            <p class="live-date"><br>2021年9月19日（日）</p>
-            <p class="address">〒106-0031 東京都港区西麻布1丁目2−9</p>
+            <p class="artist">GLAY</p>
+            <p class="live-name">GLAY ARENA TOUR 2021-2022 "FREEDOM ONLY" </p>
+            <p class="site-name">さいたまスーパーアリーナ</p>
+            <p class="live-date"><br>2022年2月5日（土）</p>
+            <p class="address">〒330-9111 埼玉県さいたま市中央区新都心８</p>
             <span class="site-tel">TEL:<a class="site-address" href="+131115552368">XX-XXXX-XXXX</a></span>
             <a class=live-list href="../concert/list.php">過去のライブ参戦履歴</a>
           </div>
@@ -238,23 +238,23 @@
         <h2>contact</h2>
         <p class="underbar-color under-contact"></p>
       </div>
-      <form action="./send_mail.php" method="POST">
+      <form id="contactForm" action="./send_mail.php" method="POST">
         <div class="form-group">
           <!--お名前-->
           <label class="contact-text" for="name">お名前</label>
-          <input type="text" name="name" placeholder="名前を入力してください" class="form-name">
+          <input type="text" id="username" name="username" class="username" placeholder="名前を入力してください">
         </div>
         <div class="form-group">
           <!--メールアドレス-->
           <label class="contact-text" for="emall">メールアドレス</label>
-          <input type="text" name="mail" placeholder="メールアドレスを入力してください" class="form-mail">
+          <input type="text" id="mail" name="mail" class="mail" placeholder="メールアドレスを入力してください">
         </div>
         <div class="form-group">
           <!--セレクトフォーム-->
           <label class="contact-text" for="main">主なご用件</label>
           <div class="form-group-select">
-            <select name="option" required>
-              <option value="" hidden>どのようなご用件ですか</option>
+            <select id="option" name="option" class="option">
+              <option value="">どのようなご用件ですか</option>
               <option value="ご質問・ご意見">ご質問・ご意見</option>
               <option value="オファー・依頼">オファー・依頼</option>
               <option value="サイトの感想">サイトの感想</option>
@@ -264,14 +264,13 @@
         </div>
         <div class="form-group">
           <!--お問い合わせフォーム-->
-          <label class="contact-text" for="request-about">問い合わせ内容</label>
-          <textarea name="comment" id="request-about" cols="60" rows="10" placeholder="ここに記入して下さい"></textarea>
+          <label class="contact-text" for="comment">問い合わせ内容</label>
+          <textarea id="comment" name="comment" class="comment" cols="60" rows="10" placeholder="ここに記入して下さい"></textarea>
         </div>
         <!--送信ボタン-->
         <input class="send-button" type="submit" value="送信する">
       </form>
     </div>
   </section>
-
   <!--共通部分：フッター（include関数）-->
 <?php include($_SERVER['DOCUMENT_ROOT'].'/mysite/common/footer.php'); ?>

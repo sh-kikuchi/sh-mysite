@@ -1,13 +1,12 @@
-
+/*=======================================================================
+ハンバーガーメニュー
+*======================================================================= * /
+/*-----------------------------------------------------------------------
+.g_navはcss（Style_s)では非表示。display:none;
+→ボタンを押しても何も起らないので、メニューを表示できるようにしたい。
+→クリックした時にメニューの一覧を出す。
+------------------------------------------------------------------------*/
 $(function () {
-  /*=======================================================================
-  ハンバーガーメニュー
-  *======================================================================= * /
-  /*-----------------------------------------------------------------------
-  .g_navはcss（Style_s)では非表示。display:none;
-  →ボタンを押しても何も起らないので、メニューを表示できるようにしたい。
-  →クリックした時にメニューの一覧を出す。
-  ------------------------------------------------------------------------*/
   $('.menu-trigger').click(function () {
 
     /* 1_クリックした要素に「.active」要素を付与*/
@@ -107,4 +106,92 @@ $(function () {
         });
     }
   });
+});
+
+/*
+=======================================================================
+フォームのエラーチェック
+======================================================================= */
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  //値を取得
+  const username = document.getElementById('username').value;
+  const mail = document.getElementById('mail').value;
+  const option = document.getElementById('option').value;
+  const comment = document.getElementById('comment').value;
+
+  //空チェック用配列
+  const formArray = [username, mail, option, comment];
+
+  //メールアドレスの正規表現
+  const regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+
+  // 空チェック
+  for (let i = 0; i < formArray.length; i++) {
+    if (formArray[i] === "") {
+      switch (i) {
+        case 0:
+          alert("名前を入力して下さい");
+          break;
+        case 1:
+          alert("メールアドレスを入力して下さい");
+          break;
+        case 2:
+          alert("ご用件を選択して下さい");
+          break;
+        case 3:
+          alert("問い合わせ内容を入力してください");
+          break;
+      }
+      return false;
+    }
+  }
+
+  // 名前の文字数制限
+  if (username.length > 25) {
+    alert('名前は25文字以上で入力してください。')
+    return false;
+  }
+
+  // メールアドレスの形式チェック
+  if (!regex.test(mail)) {
+    alert('メールアドレスの形式が不正です')
+    return false;
+  }
+
+  // 名前の文字数制限
+  if (comment.length > 200) {
+    alert('コメントは200文字以内で入力してください。')
+    return false;
+  }
+
+  $.ajax({
+    type: 'post',
+    url: 'send_mail.php',
+    datatype: 'json',
+    data: {
+      username: $("#username").val(),
+      mail: $("#mail").val(),
+      option: $("#option").val(),
+      comment: $("#comment").val()
+    }
+  })
+    .done(function (response) {
+      confirm('本当に送信しても宜しいでしょうか？');
+      $("#username").text(response["username"]);
+      $("#mail").text(response["mail"]);
+      $("#option").text(response["option"]);
+      $("#comment").text(response["comment"]);
+      $("#username").val("");
+      $("#mail").val("");
+      $("#option").val("");
+      $("#comment").val("");
+    })
+    .fail(function () {
+      alert("通信エラー");
+    });
+
 });
