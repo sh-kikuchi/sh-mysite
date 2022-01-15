@@ -110,6 +110,7 @@
   font-size: 20px;
   margin:0 auto;
   border-radius: 5px;
+  margin-bottom:30px;
 }
 
 #book_review .submit:hover{
@@ -130,6 +131,10 @@
   padding-top: 20px;
   padding-bottom: 10px;
   text-align: center;
+}
+
+.items label{
+  display: block;
 }
 
 .txt{
