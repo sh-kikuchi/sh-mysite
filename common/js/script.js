@@ -1,11 +1,27 @@
 /*=======================================================================
+Topに戻る
+======================================================================= */
+window.onload = function () {
+  let Animation = function () {
+    //アイコンの位置取得
+    let pageTop = document.getElementById('vampire');
+    //要素の位置座標を取得
+    let rect = pageTop.getBoundingClientRect();
+    //topからの距離
+    let scrollTop = rect.top + window.pageYOffset;
+
+    if (scrollTop > 600) {
+      pageTop.classList.add('show');
+    } else {
+      pageTop.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', Animation);
+}
+
+/*=======================================================================
 ハンバーガーメニュー
-*======================================================================= * /
-/*-----------------------------------------------------------------------
-.g_navはcss（Style_s)では非表示。display:none;
-→ボタンを押しても何も起らないので、メニューを表示できるようにしたい。
-→クリックした時にメニューの一覧を出す。
-------------------------------------------------------------------------*/
+======================================================================= */
 $(function () {
   $('.menu-trigger').click(function () {
 
@@ -83,7 +99,7 @@ $(function () {
 ======================================================================= */
 $(function () {
   var $filters = $('.filter [data-filter]'),
-    $boxes = $('.trip-wrapper [data-category]');
+    $boxes = $('.modal-area [data-category]');
 
   $filters.on('click', function (e) {
     e.preventDefault();
@@ -107,6 +123,31 @@ $(function () {
     }
   });
 });
+
+/*=======================================================================
+タブ切り替え（live/playlist)
+=======================================================================*/
+document.addEventListener('DOMContentLoaded', function () {
+  // タブに対してクリックイベントを適用
+  const tabs = document.getElementsByClassName('tab');
+  for (let i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', tabSwitch, false);
+  }
+
+  // タブをクリックすると実行する関数
+  function tabSwitch() {
+    // タブのclassの値を変更
+    document.getElementsByClassName('is-active')[0].classList.remove('is-active');
+    this.classList.add('is-active');
+    // コンテンツのclassの値を変更
+    document.getElementsByClassName('is-show')[0].classList.remove('is-show');
+    const arrayTabs = Array.prototype.slice.call(tabs);
+    const index = arrayTabs.indexOf(this);
+    document.getElementsByClassName('panel')[index].classList.add('is-show');
+  };
+}, false);
+
+
 
 /*
 =======================================================================
@@ -193,5 +234,4 @@ contactForm.addEventListener('submit', function (e) {
     .fail(function () {
       alert("通信エラー");
     });
-
 });

@@ -28,6 +28,10 @@
         <link rel="stylesheet" type="text/css" href="/mysite/common/css/profile/profile.css">
 
         <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Rock+Salt&family=Teko:wght@400&display=swap" rel="stylesheet">
+
         <!-- top画面 -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -45,17 +49,16 @@
     <body>
     <header>
         <div class="nav-wrapper">
+            <div class="header-name">
+                <img class="header-logo" src="../common/img/s_logo.png"> Mysite
+           </div>
             <div class="g_nav">
                 <ul>
-                    <li class="menu-flag"><a href="/mysite/main/index.php#top">Top</a></li>
-                    <li class="menu"><a href="/mysite/main/index.php#profile">Profile</a></li>
-                    <li class="menu"><a href="/mysite/main/index.php#book">Books</a></li>
-                    <li class="menu"><a href="/mysite/main/index.php#trip">Trips</a></li>
-                    <li class="menu"><a href="/mysite/main/index.php#music">Music</a></li>
-                    <li class="menu"><a href="/mysite/main/index.php#live">Concerts</a></li>
-                    <li class="menu"><a href="/mystudy/index/index.php">Study</a></li>
-                    <li class="menu"><a href="https://sh-revue.net/">Work</a></li>
-                    <li class="menu"><a href="/mysite/main/index.php#contact">Contact</a></li>
+                    <li class="menu"><a href="/mysite/main/index.php#profile-wrapper">Profile</a></li>
+                    <li class="menu"><a href="/mysite/main/index.php#book-wrapper">Books</a></li>
+                    <li class="menu"><a href="/mysite/main/index.php#trip-wrapper">Trips</a></li>
+                    <li class="menu"><a href="/mysite/main/index.php#music-wrapper">Music</a></li>
+                    <li class="menu"><a href="/mysite/main/index.php#contact-wrapper">Contact</a></li>
                 </ul>
             </div>
         </div>
