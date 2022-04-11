@@ -1,3 +1,22 @@
+.fade-in {
+  opacity: 0;
+  transition-duration: 300ms;
+  transition-property: opacity, transform;
+}
+
+.fade-in-left {
+  transform: translate(-50px, 0);
+}
+
+.fade-in-right {
+  transform: translate(50px, 0);
+}
+
+.scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 /*logo*/
 .header-logo {
   width: 35px;

@@ -30,7 +30,7 @@
   </div>
 </section>
 <!-- Profile -->
-<section id ="profile-wrapper">
+<section id ="profile-wrapper" class="fade-in fade-in-left box">
     <h2 class="title" style="padding-bottom:0;">:Profile</h2>
     <div class="contents">
         <div class="grid-divide">
@@ -61,7 +61,7 @@
 </section>
 
 <!-- Book -->
-<section id="book-wrapper">
+<section id="book-wrapper" class="fade-in fade-in-right box">
     <h2 class="title" style="padding-bottom:0;">:Book</h2>
     <div class="contents">
         <div class="grid-divide book">
@@ -118,7 +118,7 @@
     </div>
 </section>
 <!-------------------旅行--------------------->
-<section id="trip-wrapper">
+<section id="trip-wrapper" class="fade-in fade-in-left box">
   <h2  class="title">:Trip</h2>
   <div class="contents">
     <div class="trip-lineup">
@@ -161,7 +161,7 @@
   </div>
 </section>
 <!--------------------Music------------------------>
-<section id="music-wrapper">
+<section id="music-wrapper" class="fade-in fade-in-right box">
     <h2 class="title">:Music</h2>
     <div class="contents">
         <div class="tab-panel">
@@ -200,7 +200,7 @@
   <!-------------------お問い合わせフォーム--------------------->
 <section id="contact-wrapper" style="background-color: #6E6E6E;">
   <h2  class="title">:contact</h2>
-  <div class="contents">
+  <div class="contents ">
     <form id="contactForm" action="./send_mail.php" method="POST">
       <div class="form-group">
         <!--お名前-->

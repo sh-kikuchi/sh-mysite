@@ -8,18 +8,6 @@ body {
 }
 
 
-/*------------------------------------
-D_Recommend Books
-1_画像をブロック要素にすることでサイズ設定可
-2_縦中央配置（margin topとbottomのセット)
-3_テキストの右/中央/左揃え（text-align)
-4_ボタンを作る
-------------------------------------*/
-#book {
-  background: linear-gradient(to bottom, rgba(220, 220, 220, 0.5), rgba(211, 211, 211, 0.5));
-  padding-top: 70px;
-  padding-bottom: 60px;
-}
 
 .book-container {
   width: 100%;
@@ -67,11 +55,6 @@ D_Recommend Books
   border-radius: 3px;
   text-align: left;
 }
-
-
-
-
-
 
 /*------------------------------------
 E_trip
