@@ -1,3 +1,22 @@
+/*
+common: animation
+common: font
+common: layout
+common: header
+common: footer
+common: background
+00_firstview
+01_profile
+02_book
+03_trip
+04_music
+05_contact
+99_footer
+*/
+
+/*---------------------------
+common: animation
+----------------------------*/
 .fade-in {
   opacity: 0;
   transition-duration: 300ms;
@@ -17,14 +36,9 @@
   transform: translate(0, 0);
 }
 
-/*logo*/
-.header-logo {
-  width: 35px;
-  height: 35px;
-  vertical-align: middle;
-}
-
-/*googlefont*/
+/*---------------------------
+common: layout
+----------------------------*/
 .google-font {
   font-family: 'Allura',
     cursive;
@@ -36,11 +50,11 @@
     sans-serif;
 }
 
-/*各コンテンツ*/
 .contents {
   max-width: 1024px;
   max-height: 100%;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 .title {
@@ -54,20 +68,183 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.prof-name {
-  font-size: 25px;
+/*---------------------------
+common: background
+----------------------------*/
+#profile-wrapper,
+#book-wrapper,
+#trip-wrapper,
+#music-wrapper,
+#content-wrapper {
+  max-width: 100vw;
+  height: 650px;
 }
 
-.prof-list {
-  text-align: center;
+#profile-wrapper {
+  background-color: #83BAB9;
 }
 
-.prof-list li {
-  list-style: none;
+#book-wrapper {
+  background-color: #FCF2DD !important;
+}
+
+#trip-wrapper {
+  background-color: #C9C2B0;
+}
+
+#music-wrapper {
+  background-color: #DD8874;
+}
+
+#content-wrapper {
+  background-color: #6E6E6E;
+}
+
+.grid-divide.book {
+  grid-template-columns: 2fr 1fr;
+}
+
+.book-app-title {
+  width: auto;
+  margin: 0 auto;
 }
 
 /*---------------------------
-ファーストビュー
+common: header
+----------------------------*/
+.header-logo {
+  width: 35px;
+  height: 35px;
+  vertical-align: middle;
+}
+
+/*グローバルナビゲーション全体*/
+.nav-wrapper {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.g_nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.g_nav ul li {
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.g_nav ul li a {
+  width: 50px;
+  padding: 10px 0px;
+  display: block;
+  color: #000000;
+  text-decoration: none;
+}
+
+#fixed-header {
+  width: 100%;
+  position: fixed;
+  top: -50px;
+  height: 50px;
+  transition: .5s;
+  z-index: 99;
+}
+
+#fixed-header.is-show {
+  top: 0;
+}
+
+/*------------------------------------
+common: footer
+------------------------------------*/
+footer {
+  padding: 15px;
+  background-color: rgba(105, 105, 105, 0.5);
+  /*gray*/
+  height: 150px;
+}
+
+#vampire {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+#vampire.show {
+  opacity: 1.0;
+  transform: none;
+}
+
+.footer-content {
+  /* width: 500px; */
+}
+
+.footer-menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px 20px;
+}
+
+.footer-menu li a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #000;
+}
+
+.footer_menu {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.footer_menu ul {
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer_menu ul li {
+  list-style: none;
+  width: 50px;
+}
+
+footer small {
+  font-size: 12px;
+  display: block;
+  text-align: center;
+}
+
+.footer-logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-about-site {
+  display: flex;
+  justify-content: center !important;
+
+}
+
+.footer-about-site a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+}
+
+/*---------------------------
+00_firstview
 ----------------------------*/
 #firstview {
   display: grid;
@@ -78,9 +255,7 @@
   background-image: url('../../img/main/akita_winter.jpg');
   background-size: cover;
   mix-blend-mode: darken;
-
 }
-
 
 .fv-left {
   display: flex;
@@ -116,55 +291,20 @@
 }
 
 .fv-left-menu li>a {
+  color: #000000;
   text-decoration: none;
   font-size: 20px;
+  padding: 0 5px;
 }
 
-
-
-/*コンテンツ別*/
-#profile-wrapper,
-#book-wrapper,
-#trip-wrapper,
-#music-wrapper,
-#content-wrapper {
-  max-width: 100vw;
-  height: 600px;
-  padding-bottom: 50px;
+.fv-left-menu li>a:hover {
+  color: #ffffff;
+  background-color: #000000;
 }
 
-#profile-wrapper {
-  background-color: #83BAB9;
-}
-
-#book-wrapper {
-  background-color: #FCF2DD !important;
-}
-
-#trip-wrapper {
-  background-color: #C9C2B0;
-}
-
-#music-wrapper {
-  background-color: #DD8874;
-}
-
-#content-wrapper {
-  background-color: #6E6E6E;
-}
-
-.grid-divide.book {
-  grid-template-columns: 2fr 1fr;
-}
-
-.book-app-title {
-  width: auto;
-  margin: 0 auto;
-}
-
-/*
-   Profile
-  */
+/*---------------------------
+01_Profile
+----------------------------*/
 .portrait {
   width: 200px;
   height: 200px;
@@ -172,15 +312,54 @@
   margin: 0 auto;
 }
 
+.prof-word {
+  margin-bottom: 20px;
+}
+
+.sentence {
+  font-size: 40px;
+}
+
 .prof-name {
+  font-size: 25px;
+  text-align: center;
+}
+
+.prof-list {
+  text-align: center;
+}
+
+.prof-list li {
+  list-style: none;
+}
+
+.prof-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  height: 75px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+.prof-content-number {
+  width: 50px;
+  font-size: 25px;
   text-align: center;
 }
 
 .prof-content {
-  height: 75px;
-  border: 1px solid #fff;
-  margin: 5px;
-  background-color: #fff;
+  width: 300px;
+}
+
+.prof-triangle {
+  width: 0px;
+  border: 1px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid darkslategray;
+  transform: rotate(90deg);
 }
 
 .prof-content a {
@@ -196,12 +375,14 @@
   margin-left: 5px;
 }
 
-.prof-content:hover {
+.prof-index:hover {
   top: -3px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
 
-/*Book*/
+/*---------------------------
+02_book
+----------------------------*/
 .book-box {
   display: none;
 }
@@ -222,11 +403,21 @@
   font-size: 20px;
 }
 
+.book-note {
+  /* 2022/04/06 https: //www.design-memo.com/coding/css-note */
+  width: 500px;
+  padding: 0 1em;
+  background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
+  background-size: auto 2.0em;
+  line-height: 2.0em;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+
 .book-about {
-  margin-top: 16px;
-  padding: 16px;
-  border: 1px solid #000000;
-  border-radius: 3px;
+  font-size: 14px;
   text-align: left;
 }
 
@@ -239,8 +430,9 @@
 .next,
 .prev {
   display: block;
-  width: 200px;
-  height: 50px;
+  width: 150px;
+  background-color: #ffffff;
+  margin: 10px;
 }
 
 /*吹き出し*/
@@ -248,10 +440,11 @@
   position: relative;
   width: 300px;
   height: 200px;
-  background: #CDCDCD;
+  background: #fffbf2;
   padding: 10px;
   text-align: left;
   font-size: 15px;
+  border-radius: 15px;
 }
 
 .arrow_box:after {
@@ -267,23 +460,26 @@
   border-left-width: 10px;
   border-right-width: 10px;
   margin-left: -10px;
-  border-top-color: #CDCDCD;
+  border-top-color: #fffbf2;
   top: 100%;
   left: 50%;
 }
 
-.app-link {
+.book-app-img {
+  /* https: //www.linustock.com/ */
   width: 300px;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 25px;
-  background-color: transparent;
-  border: 2px solid #000;
-  border-radius: 5px;
+  height: 100%;
 }
 
-/*Trip*/
-/*ラインナップタブ*/
+.app-link {
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/*---------------------------
+03_trip
+----------------------------*/
 .trip-lineup {
   margin: 0px auto;
   margin-bottom: 16px;
@@ -351,7 +547,10 @@
   font-weight: bold;
 }
 
-/*Music*/
+/*---------------------------
+04_music
+----------------------------*/
+/* tab */
 .content {
   display: none;
 }
@@ -366,17 +565,28 @@
 }
 
 .tab {
-  flex-grow: 1;
+  width: 350px;
   padding: 5px;
+  margin-bottom: 10px;
   list-style: none;
-  border: solid 1px #CCC;
+  border: solid 1px #ffffff;
   text-align: center;
   cursor: pointer;
+  background-color: #ffffff;
+}
+
+.tab.playlist {
+  border-radius: 10px 0 0 10px;
+}
+
+.tab.live {
+  border-radius: 0 10px 10px 0;
 }
 
 .panel-group {
   height: 100%;
   background: transparent;
+  margin-bottom: 50px;
 }
 
 .panel {
@@ -393,11 +603,7 @@
   display: block;
 }
 
-.play-list {
-  margin-left: 10px;
-}
-
-
+/* tab: playlist */
 .music-container {
   display: flex;
   justify-content: center;
@@ -405,11 +611,12 @@
   flex-wrap: nowrap;
 }
 
-/*------------------------------------
-F_LIVE
-------------------------------------*/
+.play-list {
+  margin-left: 10px;
+}
+
+/* tab: live */
 .live-wrapper {
-  max-width: 1024px;
   margin: 0 auto;
   border: 1px solid #333;
   border-radius: 15px;
@@ -443,7 +650,7 @@ F_LIVE
 }
 
 .address {
-  margin-top: 24px;
+  margin-top: 10px;
   font-size: 16px;
 }
 
@@ -463,7 +670,7 @@ F_LIVE
 }
 
 /*---------------------------------
-contact
+05_contact
 ----------------------------------*/
 .contact-wrapper {
   max-width: 1024px;
@@ -611,120 +818,4 @@ form {
   color: #00afcc;
   background-color: #e4e0e1;
   transition: 0.6s;
-}
-
-/*グローバルナビゲーション全体*/
-.nav-wrapper {
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  background-color: whitesmoke;
-  align-items: center;
-  padding: 0 15px;
-}
-
-/*グロナビのリスト【親】→横並びにしよう*/
-.g_nav ul {
-  display: flex;
-  list-style: none;
-}
-
-/*グロナビのリスト【子】→間隔を調整しよう*/
-.g_nav ul li {
-  text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  /*padding:10px 20px;*/
-}
-
-.g_nav ul li a {
-  width: 50px;
-  padding: 10px 0px;
-  display: block;
-  color: #000000;
-  text-decoration: none;
-}
-
-
-/*------------------------------------
-footer
-------------------------------------*/
-footer {
-  padding: 15px;
-  background-color: rgba(105, 105, 105, 0.5);
-  /*gray*/
-  height: 150px;
-}
-
-#vampire {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 100px;
-  height: 100px;
-  opacity: 0;
-  transition: all 1s ease;
-}
-
-#vampire.show {
-  opacity: 1.0;
-  transform: none;
-}
-
-.footer-content {
-  /* width: 500px; */
-}
-
-.footer-menu ul {
-  display: flex;
-  justify-content: center;
-  gap: 10px 20px;
-}
-
-.footer-menu li a {
-  text-decoration: none;
-  font-size: 17px;
-  color: #000;
-}
-
-.footer_menu {
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
-.footer_menu ul {
-
-  display: flex;
-  justify-content: space-around;
-}
-
-.footer_menu ul li {
-  list-style: none;
-  width: 50px;
-}
-
-footer small {
-  font-size: 12px;
-  display: block;
-  text-align: center;
-}
-
-.footer-logo {
-  display: block;
-  width: 40px;
-  height: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-about-site {
-  display: flex;
-  justify-content: center !important;
-
-}
-
-.footer-about-site a {
-  display: block;
-  text-decoration: none;
-  color: #000000;
 }

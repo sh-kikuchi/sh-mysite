@@ -18,7 +18,6 @@ window.onload = function () {
   }
   window.addEventListener('scroll', Animation);
 }
-
 /*=======================================================================
 スクロール時のフェードイン
 ======================================================================= */
@@ -34,7 +33,33 @@ window.addEventListener('scroll', () => {
     }
   }
 });
-
+/*=======================================================================
+スクロール時のヘッダー表示
+======================================================================= */
+(function () {
+  const fh = document.getElementById('fixed-header');
+  const isUp = (function () {
+    const scrollElement = document.scrollingElement; //スクロール要素取得
+    let flag, prePoint, scrollPoint;
+    return function () {
+      scrollPoint = scrollElement.scrollTop; //スクロール位置の取得
+      flag = prePoint > scrollPoint ? true : false;
+      prePoint = scrollPoint;
+      return flag;
+    }
+  }());
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      if (isUp()) {
+        fh.classList.remove('is-show');
+      } else {
+        fh.classList.add('is-show')
+      }
+    } else {
+      fh.classList.remove('is-show');
+    }
+  })
+}());
 /*=======================================================================
 ハンバーガーメニュー
 ======================================================================= */
@@ -60,7 +85,6 @@ $(function () {
     $('.menu-trigger').toggleClass('active');
   });
 });
-
 /*=======================================================================
 スライド機能
 ======================================================================= */
@@ -139,7 +163,6 @@ $(function () {
     }
   });
 });
-
 /*=======================================================================
 タブ切り替え（live/playlist)
 =======================================================================*/
@@ -162,15 +185,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementsByClassName('panel')[index].classList.add('is-show');
   };
 }, false);
-
-
-
-/*
-=======================================================================
+/*=======================================================================
 フォームのエラーチェック
 ======================================================================= */
 const contactForm = document.getElementById('contactForm');
-
 contactForm.addEventListener('submit', function (e) {
   e.preventDefault();
 

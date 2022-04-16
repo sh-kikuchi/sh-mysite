@@ -1,24 +1,24 @@
-
-
-#About-site{
+#About-site {
+  height: 100vh;
   padding-right: 15px;
   padding-left: 15px;
+  background: linear-gradient(to bottom, rgba(245, 245, 245, 0.5), rgba(105, 105, 105, 0.5));
 }
 
-.about-title{
+.about-title {
   margin-top: 50px;
   text-align: center;
 }
 
 
-.item-one{
+.item-one {
   margin-bottom: 15px;
 }
 
-.item-two{
+.item-two {
   margin-bottom: 15px;
 }
 
- .item-three{
-   margin-bottom: 50px;
+.item-three {
+  margin-bottom: 50px;
 }

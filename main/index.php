@@ -26,7 +26,6 @@
    </div>
   </div>
   <div class="fv-right">
-
   </div>
 </section>
 <!-- Profile -->
@@ -43,33 +42,54 @@
                 </ul>
             </div>
             <div class="grid-right">
-                <div class="prof-content">
-                    <a href="" class="modalOpen" data-target="modal-starwars">遠い昔、はるか彼方の赤羽で</a>
-                    <small>m@y 7h3 f0rc3 b3 w17h y0u</small>
+                <div class="prof-word pc">
+                  <div class="sentence google-font">
+                  The pessimist complains about the wind<br>
+                  the optimist expects it to change<br>
+                  the realist adjusts the sails<br>
+                  </div>
+                  <small>—William Arthur Ward</small>
+               </div>
+                <div class="prof-index">
+                    <div class="prof-content-number google-font">01</div>
+                    <div class="prof-content">
+                        <a href="" class="modalOpen" data-target="modal-starwars">遠い昔、はるか彼方の赤羽で</a>
+                        <small>m@y 7h3 f0rc3 b3 w17h y0u</small>
+                    </div>
+                    <div class="prof-triangle"></div>
                 </div>
-                <div class="prof-content">
-                    <a href="http://sh21mysite.com/mystudy/index/index.php">Time in History</a>
-                    <small>高等遊民を目指しつつ、歴史の深い手に惹かれる</small>
+                <div class="prof-index">
+                    <div class="prof-content-number google-font">02</div>
+                    <div class="prof-content">
+                      <a href="http://sh21mysite.com/mystudy/index/index.php">Time in History</a>
+                      <small>高等遊民を目指しつつ、歴史の深い手に惹かれる</small>
+                    </div>
+                    <div class="prof-triangle"></div>
                 </div>
-                <div class="prof-content">
-                    <a href="https://sh-revue.net/">Re:Vue</a>
-                    <small>余生におけるプログラミングのまとめ</small>
-              </div>
+                <div class="prof-index">
+                    <div class="prof-content-number google-font">03</div>
+                    <div class="prof-content">
+                        <a href="https://sh-revue.net/">Re:Vue</a>
+                        <small>余生におけるプログラミングのまとめ</small>
+                    </div>
+                    <div class="prof-triangle"></div>
+                </div>
             </div>
        </div>
     </div>
 </section>
-
 <!-- Book -->
 <section id="book-wrapper" class="fade-in fade-in-right box">
-    <h2 class="title" style="padding-bottom:0;">:Book</h2>
+    <h2 class="title" style="color:black;">:Book</h2>
     <div class="contents">
         <div class="grid-divide book">
             <div class="grid-left">
                   <div class="book-box active box-design">
                     <div class="book-text">
                       <div class="book-title">大河の一滴</div>
-                      <p class="book-about about-text">「人はみな大河の一滴」である。見様によれば、マイナス思考ともとれる言葉であるが、著者はその極限まで降りていって、絶望の底から見える光を見た時の驚きこそがプラス思考だという。このようにAと非Aは共存できないという西洋型の「対立」の形式ではなく、＜中庸＞だとか＜寛容＞が生きることに必要であるという。人間のこころの光と影―二律背反な感情―が共存していて、まずはその混沌を認めることから始める。そこから如何にして、融通無碍の境地をつくることが出来るか、この過程こそが生命力の強さなのだと教えてくれる。個々のこころの中の葛藤をそのまま受け止め、行動や考え方の自由へと昇華させる。それにはマイナス思考も欠かせぬものになるし、邪魔な存在ではないのだと考えさせられる。1998年に書かれたこの本であるが、現代においても人間の知性を育てる感情とか情念、こころの豊かさを醸成していくことが課題であることを痛感してならない。</p>
+                      <div class="book-note">
+                          <p class="book-about about-text">「人はみな大河の一滴」である。見様によれば、マイナス思考ともとれる言葉であるが、著者はその極限まで降りていって、絶望の底から見える光を見た時の驚きこそがプラス思考だという。このようにAと非Aは共存できないという西洋型の「対立」の形式ではなく、＜中庸＞だとか＜寛容＞が生きることに必要であるという。人間のこころの光と影―二律背反な感情―が共存していて、まずはその混沌を認めることから始める。そこから如何にして、融通無碍の境地をつくることが出来るか、この過程こそが生命力の強さなのだと教えてくれる。個々のこころの中の葛藤をそのまま受け止め、行動や考え方の自由へと昇華させる。それにはマイナス思考も欠かせぬものになるし、邪魔な存在ではないのだと考えさせられる。1998年に書かれたこの本であるが、現代においても人間の知性を育てる感情とか情念、こころの豊かさを醸成していくことが課題であることを痛感してならない。</p>
+                      </div>
                       <p class="book-author about-text">五木寛之</p>
                       <p class="book-year   about-text">1999年(文庫）</p>
                     </div>
@@ -77,7 +97,9 @@
                   <div class="book-box">
                     <div class="book-text">
                       <div class="book-title">胸懐</div>
-                      <p class="book-about about-text">『胸懐』はTAKUROの自伝であると同時にGLAYが歩んできた軌跡を綴ったもの。「家族」との音楽体験、GLAYを通じた、様々な「仲間」との出会い、「東京」でメジャーデビューを果たし、成功や「幸福」を手にしてきたこと、その裏腹にあったTAKUROと彼女との間の「喪失」などの実話が赤裸々に綴られている。中でも彼の「永遠」に対する想いは私の心を掴んで離さない。TAKUROによれば、どんな幸せも永遠には続かないし、人はそれを願うから不幸なのだと。だが、それが「一瞬の永遠」であるとしたら人生は輝かしいものになるのだと。私は「一瞬の永遠」はひたすら現実を意味しているように思えた。人は幸せを失うまいと恐れてしまい、やがて自分の手で握りつぶしてしまう。ならばいっそ、そのまま受け入れてみるが良いというのだが、それは失うことの残酷さを享受しなければならないということでもある。このように「生」のリアリティを感じさせてくれる点にこの本の魅力がある。</p>
+                      <div class="book-note">
+                          <p class="book-about about-text">『胸懐』はTAKUROの自伝であると同時にGLAYが歩んできた軌跡を綴ったもの。「家族」との音楽体験、GLAYを通じた、様々な「仲間」との出会い、「東京」でメジャーデビューを果たし、成功や「幸福」を手にしてきたこと、その裏腹にあったTAKUROと彼女との間の「喪失」などの実話が赤裸々に綴られている。中でも彼の「永遠」に対する想いは私の心を掴んで離さない。TAKUROによれば、どんな幸せも永遠には続かないし、人はそれを願うから不幸なのだと。だが、それが「一瞬の永遠」であるとしたら人生は輝かしいものになるのだと。私は「一瞬の永遠」はひたすら現実を意味しているように思えた。人は幸せを失うまいと恐れてしまい、やがて自分の手で握りつぶしてしまう。ならばいっそ、そのまま受け入れてみるが良いというのだが、それは失うことの残酷さを享受しなければならないということでもある。このように「生」のリアリティを感じさせてくれる点にこの本の魅力がある。</p>
+                      </div>
                       <p class="book-author about-text">TAKURO</p>
                       <p class="book-year   about-text">2003年</p>
                     </div>
@@ -85,7 +107,9 @@
                   <div class="book-box">
                     <div class="book-text">
                       <div class="book-title">失敗の本質 日本軍の組織論的研究</div>
-                      <p class="book-about about-text">大学時代の師である戸部良一先生が編者の著書。太平洋戦争における日本軍の組織的な研究でありながら、ビジネス文書として読まれることも多い。軍事において、作戦目的の多義性や不明確性が戦略目的を曖昧なものにしてしまう。そのため、グランド・ストラテジー(grand strategy)の策定が重要である。それは組織が有するあらゆる資源をある目標に向かって調整し、指向することであり、その都度パフォーマンス・ギャップを把握することで組織学習を促すことが出来る。自己の行動をたえず変化する現実に照らし合わせ修正していくことで自己革新的な組織になることが出来るのだが、それには自己否定的な学習も伴う。学習とは知識の蓄積とは一概に言えず、「学習棄却」(unlearning;既存知識の棄却)を必要とするので、状況に応じた取捨選択が必要である。絶え間なく変化する状況を組織として十分に咀嚼し、それに対して指針を設定することが出来るかが、組織の善し悪しを決める。</p>
+                      <div class="book-note">
+                          <p class="book-about about-text">大学時代の師である戸部良一先生が編者の著書。太平洋戦争における日本軍の組織的な研究でありながら、ビジネス文書として読まれることも多い。軍事において、作戦目的の多義性や不明確性が戦略目的を曖昧なものにしてしまう。そのため、グランド・ストラテジー(grand strategy)の策定が重要である。それは組織が有するあらゆる資源をある目標に向かって調整し、指向することであり、その都度パフォーマンス・ギャップを把握することで組織学習を促すことが出来る。自己の行動をたえず変化する現実に照らし合わせ修正していくことで自己革新的な組織になることが出来るのだが、それには自己否定的な学習も伴う。学習とは知識の蓄積とは一概に言えず、「学習棄却」(unlearning;既存知識の棄却)を必要とするので、状況に応じた取捨選択が必要である。絶え間なく変化する状況を組織として十分に咀嚼し、それに対して指針を設定することが出来るかが、組織の善し悪しを決める。</p>
+                      </div>
                       <p class="book-author about-text">戸部良一、寺本義也、鎌田伸一、杉之尾孝生、村井友秀、野中郁次郎</p>
                       <p class="book-year   about-text">1991(文庫）</p>
                     </div>
@@ -99,19 +123,19 @@
             <div class="grid-right">
               <div>
                   <div class='arrow_box'>
-                    <h3 class="book-app-title">bookstock</h3>
                     <div class="book-app-detail">
                       感じたことを綴ったり、<br>
                       お気に入りの一節を書き留めたり、<br>
                       自ら考えたことを整理したり、<br>
-                      読書を通じた様々な体験を記録できる<br>
-                      モノを作りました。<br>
-                      お名前は「bookstock」です。
+                      読書を通じた様々な体験を記録してみませんか？<br>
+                    </div>
+                    <div class="app-link">
+                        <a href="http://sk-bookstock.herokuapp.com/login">bookstockへ</a>
                     </div>
                 </div>
               </div>
-              <div class="app-link">
-                 <a href="http://sk-bookstock.herokuapp.com/login">アプリへ</a>
+              <div>
+                <img src="../common/img/https___www.linustock.com_images_uploads_2017_12_1513228735.png" class="book-app-img">
               </div>
             </div>
        </div>
@@ -165,12 +189,11 @@
     <h2 class="title">:Music</h2>
     <div class="contents">
         <div class="tab-panel">
-    <!--タブ-->
-    <ul class="tab-group">
-      <li class="tab playlist is-active">playlist</li>
-      <li class="tab live">live</li>
-    </ul>
-
+        <!--タブ-->
+        <ul class="tab-group">
+          <li class="tab playlist is-active">playlist</li>
+          <li class="tab live">live</li>
+        </ul>
     <!--タブを切り替えて表示するコンテンツ-->
     <div class="panel-group">
       <div class="panel playlist is-show">

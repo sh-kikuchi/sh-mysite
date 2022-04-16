@@ -15,12 +15,8 @@
 
         <!-- stylesheet -->
         <link rel="stylesheet" type="text/css" href="/mysite/common/css/reset.css">
-        <link rel="stylesheet" type="text/css" href="/mysite//common/css/common/common_l.css" media="screen and (min-width:769px)">
-        <link rel="stylesheet" type="text/css" href="/mysite/common/css/common/common_s.css" media="screen and (max-width:768px)">
         <link rel="stylesheet" type="text/css" href="/mysite/common/css/main/main_l.css" media="screen and (min-width:769px)">
         <link rel="stylesheet" type="text/css" href="/mysite/common/css/main/main_s.css" media="screen and (max-width:768px)">
-        <link rel="stylesheet" type="text/css" href="/mysite/common/css/book/book_l.css" media="screen and (min-width:769px)">
-        <link rel="stylesheet" type="text/css" href="/mysite/common/css/book/book_s.css" media="screen and (max-width:768px)">
         <link rel="stylesheet" type="text/css" href="/mysite/common/css/main/starwarsintro.css">
         <link rel="stylesheet" type="text/css" href="/mysite/common/css/about/about.css">
         <link rel="stylesheet" type="text/css" href="/mysite/common/css/concert/concert.css">
@@ -32,11 +28,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Rock+Salt&family=Teko:wght@400&display=swap" rel="stylesheet">
 
-        <!-- top画面 -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600&display=swap" rel="stylesheet">
-
         <!-- fontAwesome -->
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
@@ -47,7 +38,7 @@
         <title>mysite-Into the Wild-</title>
     </head>
     <body>
-    <header>
+    <header id="fixed-header">
         <div class="nav-wrapper">
             <div class="header-name">
                 <img class="header-logo" src="../common/img/s_logo.png"> Mysite
