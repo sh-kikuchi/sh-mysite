@@ -28,15 +28,42 @@ common: layout
     sans-serif;
 }
 
-.contents {
-  padding-bottom: 50px;
+.title {
+  width: 300px;
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 25px;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
 }
 
-.title {
-  font-size: 50px;
-  color: #fff;
-  text-align: center;
-  padding: 0px;
+.title.profile {
+  filter: drop-shadow(10px 10px 0 #83BAB9);
+}
+
+.title.trip {
+  filter: drop-shadow(10px 10px 0 #FCF2DD);
+}
+
+.title.music {
+  filter: drop-shadow(10px 10px 0 #C9C2B0);
+}
+
+.title.book {
+  filter: drop-shadow(10px 10px 0 #DD8874);
+}
+
+.title.contact {
+  filter: drop-shadow(10px 10px 0 #6E6E6E);
+}
+
+.contents {
+  padding-bottom: 50px;
 }
 
 body {
@@ -47,6 +74,11 @@ body {
 /*PCは表示、他は非表示*/
 .pc {
   display: none;
+}
+
+/* section毎の余白調整 */
+section {
+  padding-top: 25px;
 }
 
 /*---------------------------
@@ -71,6 +103,7 @@ common: header
   text-align: center;
   width: 100%;
   height: 100%;
+  padding-top: 100px;
   transform: translateY(-110%);
   transition: all 0.6s;
   background-color: #000;
@@ -194,6 +227,10 @@ footer {
   padding: 10px 15px;
 }
 
+.copyright {
+  margin-top: 0;
+}
+
 /*---------------------------
 common: background
 ----------------------------*/
@@ -207,23 +244,33 @@ common: background
 }
 
 #profile-wrapper {
-  background-color: #83BAB9;
-}
-
-#book-wrapper {
-  background-color: #FCF2DD !important;
+  background-color: rgba(131,
+      186,
+      185, 0.2);
 }
 
 #trip-wrapper {
-  background-color: #C9C2B0;
+  background-color: rgba(252,
+      242,
+      221, 0.2);
 }
 
 #music-wrapper {
-  background-color: #DD8874;
+  background-color: rgba(201,
+      194,
+      176, 0.2);
 }
 
-#content-wrapper {
-  background-color: #6E6E6E;
+#book-wrapper {
+  background-color: rgba(221,
+      136,
+      116, 0.2);
+}
+
+#contact-wrapper {
+  background-color: rgba(110,
+      110,
+      110, 0.2);
 }
 
 /*------------------------------------
@@ -276,7 +323,12 @@ common: background
   margin: 5px;
 }
 
+.prof-content-number {
+  font-size: 40px;
+}
+
 .prof-content {
+  width: 300px;
   border: 1px solid #fff;
   margin: 5px;
   background-color: #fff;
@@ -414,13 +466,20 @@ common: background
 /*------------------------------------
 trip
 ------------------------------------*/
+.trip-img {
+  /* https: //www.linustock.com/ */
+  display: block;
+  width: 150px;
+  height: 100%;
+  margin: 10px auto;
+}
+
 /*ラインナップタブ*/
 .trip-lineup {
   max-width: 100%;
   margin: 0px auto;
   margin-bottom: 16px;
 }
-
 
 .trip-lineup ul {
   display: flex;
@@ -435,11 +494,15 @@ trip
   display: block;
   width: 100%;
   height: 32px;
+  margin-right: 2px;
+  margin-left: 2px;
   text-align: center;
   list-style: none;
-  border: 1px solid #000000;
+  border: 1px dashed #000000;
   background-color: #fff;
 }
+
+
 
 .trip-lineup ul li a {
   display: block;
@@ -451,8 +514,7 @@ trip
 }
 
 .trip-lineup ul li a:hover {
-  color: #fff;
-  background-color: #eb3c55;
+  background-color: #FCF2DD;
   transition: 0.1s;
 }
 
@@ -616,8 +678,7 @@ music
 }
 
 .tab.is-active {
-  background: #F00;
-  color: #FFF;
+  background: #C9C2B0;
   transition: all 0.2s ease-out;
 }
 
@@ -674,6 +735,13 @@ music
   color: #ffffff;
 }
 
+.music-img {
+  /* https: //www.linustock.com/ */
+  display: block;
+  width: 150px;
+  height: 100%;
+  margin: 10px auto;
+}
 
 
 /*------------------------------------

@@ -37,7 +37,7 @@
         <script src="/mysite/common/js/PaginateMyTable.js" defer></script>
         <title>mysite-Into the Wild-</title>
     </head>
-    <body>
+    <body style="overflow-x:hidden;">
     <header id="fixed-header">
         <div class="nav-wrapper">
             <div class="header-name">
@@ -45,6 +45,8 @@
            </div>
             <div class="g_nav">
                 <ul>
+                    <li class="menu"><a href="/mysite/main/index.php">Top</a></li>
+                    <li class="menu"><a href="/mysite/main/index.php#book-wrapper">Books</a></li>
                     <li class="menu"><a href="/mysite/main/index.php#profile-wrapper">Profile</a></li>
                     <li class="menu"><a href="/mysite/main/index.php#book-wrapper">Books</a></li>
                     <li class="menu"><a href="/mysite/main/index.php#trip-wrapper">Trips</a></li>
