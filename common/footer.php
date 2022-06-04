@@ -15,7 +15,7 @@
             <a href="/mysite/main/index.php#firstview"><img id="vampire" src="../common/img/vampire.png"></a>
 
      </div>
-        <small>Copyright © 2020-2022 mysite All Rights Reserved.</small>
+        <small class="copyright">Copyright © 2020-2022 mysite All Rights Reserved.</small>
     </footer>
 </body>
 </html>
