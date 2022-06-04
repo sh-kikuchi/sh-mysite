@@ -30,7 +30,9 @@
 </section>
 <!-- Profile -->
 <section id ="profile-wrapper" class="fade-in fade-in-left box">
-    <h2 class="title" style="padding-bottom:0;">:Profile</h2>
+    <div class="title profile">
+      Profile
+    </div>
     <div class="contents">
         <div class="grid-divide">
             <div class="grid-left">
@@ -78,9 +80,92 @@
        </div>
     </div>
 </section>
+<section id="trip-wrapper" class="fade-in fade-in-left box">
+  <div  class="title trip">Trip</div>
+  <div class="contents">
+    <div class="trip-image-area pc">
+      <div><img src="../common/img/trip.png" class="trip-img"></div>
+      <div class='arrow_box_left'>You can’t get away from yourself by moving from one place to another.<br>Ernest Hemingway</div>
+    </div>
+    <div class="trip-lineup">
+      <ul class="filter">
+        <li class="lineup-tab" active><a class="all active" data-filter="all" href="#">ALL</a></li>
+        <li class="lineup-tab"><a class="hokkaido" data-filter="hokkaido" href="#">北海道</a></li>
+        <li class="lineup-tab"><a class="tohoku" data-filter="tohoku" href="#"> 東北</a></li>
+        <li class="lineup-tab"><a class="kanto" data-filter="kanto" href="#"> 関東</a></li>
+        <li class="lineup-tab"><a class="chubu" data-filter="chubu" href="#"> 中部</a></li>
+        <li class="lineup-tab"><a class="kinki" data-filter="kinki" href="#"> 近畿</a></li>
+        <li class="lineup-tab"><a class="chugoku" data-filter="chugoku" href="#"> 中国</a></li>
+        <li class="lineup-tab"><a class="shikoku" data-filter="shikoku" href="#"> 四国</a></li>
+        <li class="lineup-tab"><a class="kyushu" data-filter="kyushu" href="#"> 九州・沖縄</a></li>
+      </ul>
+    </div>
+    <div class="modal-area">
+        <?php foreach ($result as $list){?>
+            <div class="trip-content" data-category="<?php echo htmlspecialchars($list["en_area"]);?>">
+              <a href="" class="modalOpen" data-target="<?php echo htmlspecialchars($list["id"]);?>">
+                <img class="trip-image" src="../common/img/main/trip/<?php echo htmlspecialchars($list["image"]);?>" alt="画像">
+              </a>
+            </div>
+            <!--モーダル画面-->
+            <div class="modal-main" id="<?php echo htmlspecialchars($list["id"]);?>">
+              <div class="modal-inner">
+                <div class="modal-content">
+                  <p class="modal-title"><?php echo htmlspecialchars($list["title"]);?></p>
+                  <img class="modal-image" src="../common/img/main/trip/<?php echo htmlspecialchars($list["image"]);?>" alt="画像">
+                  <div class="trip-text">
+                    <span class="trip-modal-name"><?php echo htmlspecialchars($list["prefecture"]);?></span>
+                    <span class="trip-modal-date"><?php echo htmlspecialchars($list["date"]);?></span>
+                  </div>
+                  <p class="modal-text"><?php echo htmlspecialchars($list["comment"]);?></p>
+                  <a href="" class="modalClose">Close</a>
+                </div>
+              </div>
+            </div>
+          <?php }?>
+      </div>
+      <div><img src="../common/img/trip.png" class="trip-img sp"></div>
+  </div>
+</section>
+<!--------------------Music------------------------>
+<section id="music-wrapper" class="fade-in fade-in-right box">
+    <div class="title music">Music</div>
+    <div class="contents">
+        <div class="tab-panel">
+            <!--タブ-->
+            <ul class="tab-group">
+              <li class="tab playlist is-active">playlist</li>
+              <li class="tab live">live</li>
+            </ul>
+        </div>
+        <!--タブを切り替えて表示するコンテンツ-->
+        <div class="panel-group">
+          <div class="panel playlist is-show">
+              <div class="music-container">
+                  <iframe class="play-list" allow="autoplay *; encrypted-media *;" frameborder="0" height="380" style="width:100%;max-width:300px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/playlist/my-review-ver-mmxx/pl.u-PDb4085uLpLv7RA"></iframe>
+                  <iframe  class="play-list" src="https://open.spotify.com/embed/playlist/03BIDg9G1XlyOqm6PVKii2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              </div>
+          </div>
+          <div class="panel live">
+              <div class="live-wrapper">
+                  <iframe  class="live-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.1715895363245!2d140.03118156561138!3d35.64814383939263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022821fd52ebfdf%3A0xcec0c09c4bed45e0!2z5bmV5by144Oh44OD44K7!5e0!3m2!1sja!2sjp!4v1654323681063!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <div class="live-text">
+                    <p class="artist">GLAY</p>
+                    <p class="live-name">We♡Happy Swing Vol.3 </p>
+                    <p class="site-name">幕張メッセ</p>
+                    <p class="live-date"><br>2022年7月31日（日）</p>
+                    <p class="address">〒261-0023 千葉県千葉市美浜区中瀬２丁目１</p>
+                    <a class=live-list href="../concert/list.php">過去のライブ参戦履歴</a>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div><img src="../common/img/music.png" class="music-img"></div>
+    </div>
+</section>
 <!-- Book -->
 <section id="book-wrapper" class="fade-in fade-in-right box">
-    <h2 class="title" style="color:black;">:Book</h2>
+    <div class="title book">Book</div>
     <div class="contents">
         <div class="grid-divide book">
             <div class="grid-left">
@@ -141,88 +226,9 @@
        </div>
     </div>
 </section>
-<!-------------------旅行--------------------->
-<section id="trip-wrapper" class="fade-in fade-in-left box">
-  <h2  class="title">:Trip</h2>
-  <div class="contents">
-    <div class="trip-lineup">
-      <ul class="filter">
-        <li class="lineup-tab" active><a class="all active" data-filter="all" href="#">ALL</a></li>
-        <li class="lineup-tab"><a class="hokkaido" data-filter="hokkaido" href="#">北海道</a></li>
-        <li class="lineup-tab"><a class="tohoku" data-filter="tohoku" href="#"> 東北</a></li>
-        <li class="lineup-tab"><a class="kanto" data-filter="kanto" href="#"> 関東</a></li>
-        <li class="lineup-tab"><a class="chubu" data-filter="chubu" href="#"> 中部</a></li>
-        <li class="lineup-tab"><a class="kinki" data-filter="kinki" href="#"> 近畿</a></li>
-        <li class="lineup-tab"><a class="chugoku" data-filter="chugoku" href="#"> 中国</a></li>
-        <li class="lineup-tab"><a class="shikoku" data-filter="shikoku" href="#"> 四国</a></li>
-        <li class="lineup-tab"><a class="kyushu" data-filter="kyushu" href="#"> 九州・沖縄</a></li>
-      </ul>
-    </div>
-    <div class="modal-area">
-        <?php foreach ($result as $list){?>
-            <div class="trip-content" data-category="<?php echo htmlspecialchars($list["en_area"]);?>">
-              <a href="" class="modalOpen" data-target="<?php echo htmlspecialchars($list["id"]);?>">
-                <img class="trip-image" src="../common/img/main/trip/<?php echo htmlspecialchars($list["image"]);?>" alt="画像">
-              </a>
-            </div>
-            <!--モーダル画面-->
-            <div class="modal-main" id="<?php echo htmlspecialchars($list["id"]);?>">
-              <div class="modal-inner">
-                <div class="modal-content">
-                  <p class="modal-title"><?php echo htmlspecialchars($list["title"]);?></p>
-                  <img class="modal-image" src="../common/img/main/trip/<?php echo htmlspecialchars($list["image"]);?>" alt="画像">
-                  <div class="trip-text">
-                    <span class="trip-modal-name"><?php echo htmlspecialchars($list["prefecture"]);?></span>
-                    <span class="trip-modal-date"><?php echo htmlspecialchars($list["date"]);?></span>
-                  </div>
-                  <p class="modal-text"><?php echo htmlspecialchars($list["comment"]);?></p>
-                  <a href="" class="modalClose">Close</a>
-                </div>
-              </div>
-            </div>
-          <?php }?>
-      </div>
-  </div>
-</section>
-<!--------------------Music------------------------>
-<section id="music-wrapper" class="fade-in fade-in-right box">
-    <h2 class="title">:Music</h2>
-    <div class="contents">
-        <div class="tab-panel">
-        <!--タブ-->
-        <ul class="tab-group">
-          <li class="tab playlist is-active">playlist</li>
-          <li class="tab live">live</li>
-        </ul>
-    <!--タブを切り替えて表示するコンテンツ-->
-    <div class="panel-group">
-      <div class="panel playlist is-show">
-                    <div class="music-container">
-                <iframe class="play-list" allow="autoplay *; encrypted-media *;" frameborder="0" height="380" style="width:100%;max-width:300px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/playlist/my-review-ver-mmxx/pl.u-PDb4085uLpLv7RA"></iframe>
-                <iframe  class="play-list" src="https://open.spotify.com/embed/playlist/03BIDg9G1XlyOqm6PVKii2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            </div>
-      </div>
-      <div class="panel live">
-          <div class="live-wrapper">
-              <iframe class="live-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12928.479278101731!2d139.6307319!3d35.895081!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x506c1a377454849d!2z44GV44GE44Gf44G-44K544O844OR44O844Ki44Oq44O844OK!5e0!3m2!1sja!2sjp!4v1642305548553!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-              <div class="live-text">
-                <p class="artist">GLAY</p>
-                <p class="live-name">GLAY ARENA TOUR 2021-2022 "FREEDOM ONLY" </p>
-                <p class="site-name">さいたまスーパーアリーナ</p>
-                <p class="live-date"><br>2022年2月5日（土）</p>
-                <p class="address">〒330-9111 埼玉県さいたま市中央区新都心８</p>
-                <a class=live-list href="../concert/list.php">過去のライブ参戦履歴</a>
-              </div>
-          </div>
-      </div>
-    </div>
-  </div>
-
-    </div>
-</section>
-  <!-------------------お問い合わせフォーム--------------------->
-<section id="contact-wrapper" style="background-color: #6E6E6E;">
-  <h2  class="title">:contact</h2>
+<!-- Book -->
+<section id="contact-wrapper" class="fade-in fade-in-right box">
+ <h2 class="title contact">Contact</h2>
   <div class="contents ">
     <form id="contactForm" action="./send_mail.php" method="POST">
       <div class="form-group">
@@ -258,6 +264,7 @@
     </form>
   </div>
 </section>
+
 
 <?php include('../../mysite/common/footer.php'); ?>
 

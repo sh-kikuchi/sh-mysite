@@ -14,6 +14,7 @@ common: background
 99_footer
 */
 
+
 /*---------------------------
 common: animation
 ----------------------------*/
@@ -21,14 +22,19 @@ common: animation
   opacity: 0;
   transition-duration: 300ms;
   transition-property: opacity, transform;
+  overflow-x: hidden;
+  /* IE, Edge 対応 */
+  -ms-overflow-style: none;
+  /* Firefox 対応 */
+  scrollbar-width: none;
 }
 
 .fade-in-left {
-  transform: translate(-50px, 0);
+  transform: translate(-10%, 0);
 }
 
 .fade-in-right {
-  transform: translate(50px, 0);
+  transform: translate(10%, 0);
 }
 
 .scroll-in {
@@ -50,17 +56,50 @@ common: layout
     sans-serif;
 }
 
+.sp {
+  display: none;
+}
+
+.title {
+  width: 300px;
+  display: block;
+  margin: 25px auto;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+
+}
+
+.title.profile {
+  filter: drop-shadow(10px 10px 0 #83BAB9);
+}
+
+.title.trip {
+  filter: drop-shadow(10px 10px 0 #FCF2DD);
+}
+
+.title.music {
+  filter: drop-shadow(10px 10px 0 #C9C2B0);
+}
+
+.title.book {
+  filter: drop-shadow(10px 10px 0 #DD8874);
+}
+
+.title.contact {
+  filter: drop-shadow(10px 10px 0 #6E6E6E);
+}
+
 .contents {
   max-width: 1024px;
   max-height: 100%;
   margin: 0 auto;
   padding-bottom: 50px;
-}
-
-.title {
-  font-size: 75px;
-  color: #fff;
-  padding: 0px;
+  overflow-x: hidden;
 }
 
 .grid-divide {
@@ -77,28 +116,39 @@ common: background
 #music-wrapper,
 #content-wrapper {
   max-width: 100vw;
-  height: 650px;
 }
 
 #profile-wrapper {
-  background-color: #83BAB9;
-}
-
-#book-wrapper {
-  background-color: #FCF2DD !important;
+  background-color: rgba(131,
+      186,
+      185, 0.2);
 }
 
 #trip-wrapper {
-  background-color: #C9C2B0;
+  background-color: rgba(252,
+      242,
+      221, 0.2);
 }
 
 #music-wrapper {
-  background-color: #DD8874;
+  /* height: 860px; */
+  background-color: rgba(201,
+      194,
+      176, 0.2);
 }
 
-#content-wrapper {
-  background-color: #6E6E6E;
+#book-wrapper {
+  background-color: rgba(221,
+      136,
+      116, 0.2);
 }
+
+#contact-wrapper {
+  background-color: rgba(110,
+      110,
+      110, 0.2);
+}
+
 
 .grid-divide.book {
   grid-template-columns: 2fr 1fr;
@@ -480,6 +530,46 @@ footer small {
 /*---------------------------
 03_trip
 ----------------------------*/
+.trip-img {
+  /* https: //www.linustock.com/ */
+  width: 150px;
+  height: 100%;
+}
+
+.trip-image-area {
+  display: flex;
+
+}
+
+.arrow_box_left {
+  position: relative;
+  width: 230px;
+  height: 100px;
+  background: #FCF2DD;
+  padding: 10px;
+  text-align: left;
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+.arrow_box_left:after {
+  border: solid transparent;
+  content: '';
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  position: absolute;
+  border-color: rgba(106, 90, 205, 0);
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  margin-top: -10px;
+  border-right-color: #FCF2DD;
+  right: 100%;
+  top: 30%;
+}
+
 .trip-lineup {
   margin: 0px auto;
   margin-bottom: 16px;
@@ -497,9 +587,11 @@ footer small {
 .trip-lineup ul li {
   width: 20%;
   height: 32px;
+  margin-right: 2px;
+  margin-left: 2px;
   text-align: center;
   list-style: none;
-  border: 1px solid #000000;
+  border-bottom: 1px dashed #000000;
   background-color: #fff;
 }
 
@@ -512,8 +604,7 @@ footer small {
 }
 
 .trip-lineup ul li a:hover {
-  color: #fff;
-  background-color: #eb3c55;
+  background-color: #FCF2DD;
   transition: 0.6s;
 }
 
@@ -525,8 +616,62 @@ footer small {
   /* justify-content: center; */
 }
 
-.modalOpen {
-  display: block;
+/*モーダルのスタイル*/
+.modal-main {
+  display: none;
+}
+
+.modal-inner {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  color: #666666;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.modal-content {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-title {
+  margin-top: 40px;
+  margin-bottom: 32px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-image {
+  width: 20%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  font-size: 16px;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.modalClose {
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: #00afcc;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.modalClose:hover {
+  color: #00afcc;
+  background-color: #e4e0e1;
+  transition: 0.6s;
 }
 
 .trip-content {
@@ -594,8 +739,7 @@ footer small {
 }
 
 .tab.is-active {
-  background: #F00;
-  color: #FFF;
+  background: #C9C2B0;
   transition: all 0.2s ease-out;
 }
 
@@ -669,12 +813,19 @@ footer small {
   color: #ffffff;
 }
 
+.music-img {
+  /* https: //www.linustock.com/ */
+  display: block;
+  width: 150px;
+  height: 100%;
+  margin: 0 auto;
+}
+
 /*---------------------------------
 05_contact
 ----------------------------------*/
-.contact-wrapper {
-  max-width: 1024px;
-  margin: 0 auto;
+#contact-wrapper {
+  margin-top: 0;
 }
 
 .contact-text {
