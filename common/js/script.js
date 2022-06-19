@@ -119,11 +119,33 @@ $(function () {
 /*=======================================================================
 モーダル機能
 ======================================================================= */
+// document.querySelectorAll(".modalOpen").forEach(function (targetImage) {
+//   targetImage.onclick = function () {
+//     const dataTarget = this.getAttribute("data-target");
+//     const modal = document.getElementById(dataTarget);
+//     modal.classList.remove("modal-remove");
+//     modal.classList.add("modal-show");
+//     alert(modal.className);
+//     return false;
+//   };
+// });
+// document.querySelectorAll(".modal-close").forEach(function (targetImage) {
+//   targetImage.onclick = function () {
+//     const dataTarget = this.getAttribute("data-target");
+//     const modal = document.getElementById(dataTarget);
+//     modal.classList.remove("modal-show");
+//     modal.classList.add("modal-remove");
+//     alert(modal.className);
+//     return false;
+//   };
+// });
+
 $(function () {
   $('.modalOpen').each(function () {
     $(this).on('click', function () {
       var target = $(this).data('target');
       var modal = document.getElementById(target);
+      console.log(modal);
       $(modal).fadeIn();
       return false;
     });
@@ -135,7 +157,7 @@ $(function () {
   });
 });
 /*=======================================================================
-タブの切り替え機能
+フィルター機能
 ======================================================================= */
 $(function () {
   var $filters = $('.filter [data-filter]'),

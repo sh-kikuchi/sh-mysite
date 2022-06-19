@@ -1,14 +1,20 @@
 <?php
   require_once("../common/common.php");
+  //Trip
   $sql  ="select t.id,t.prefecture,date,comment,en_area,title,image from trips as t join prefectures as p on t.id = p.id order by t.id desc;";
-  $stmt = $pdo->query($sql); //PDOに備わっているquery機能を使って、1行目で設定した構文を使い、データを取り出す
-  $result = $stmt->fetchALL(PDO::FETCH_ASSOC); //PHPの配列,連想配列の形式に変更
+  $stmt = $pdo->query($sql);
+  $trips = $stmt->fetchALL(PDO::FETCH_ASSOC); //PHPの配列,連想配列の形式に変更
+  //book
+  $sql2  ="select author,title,year,press,comment from books order by RAND() LIMIT 3;";
+  $stmt2 = $pdo->query($sql2);
+  $books = $stmt2->fetchALL(PDO::FETCH_ASSOC); //PHPの配列,連想配列の形式に変更
+  $books1 = array_slice($books,0,1);
+  $books2 = array_slice($books,1,2);
 ?>
 
   <!--------------ヘッダー：グローバルナビゲーション--------------------->
 <?php include('../../mysite/common/header.php'); ?>
   <!-------------------トップ画面（画像＋テキスト）--------------------->
-
 <!-- FirstView -->
 <section id="firstview">
   <div class="fv-left">
@@ -52,40 +58,46 @@
                   </div>
                   <small>—William Arthur Ward</small>
                </div>
-                <div class="prof-index">
-                    <div class="prof-content-number google-font">01</div>
-                    <div class="prof-content">
-                        <a href="" class="modalOpen" data-target="modal-starwars">遠い昔、はるか彼方の赤羽で</a>
-                        <small>m@y 7h3 f0rc3 b3 w17h y0u</small>
+               <a href="" id="modalOpen" class="prof-link modalOpen" data-target="modal-starwars">
+                    <div class="prof-index" style="display:;">
+                        <div class="prof-content-number google-font">01</div>
+                        <div class="prof-content">
+                            <h3>The nerd force awakens</h3>
+                            <small>Episode V</small>
+                        </div>
+                        <div class="prof-triangle"></div>
                     </div>
-                    <div class="prof-triangle"></div>
-                </div>
-                <div class="prof-index">
-                    <div class="prof-content-number google-font">02</div>
-                    <div class="prof-content">
-                      <a href="http://sh21mysite.com/mystudy/index/index.php">Time in History</a>
-                      <small>高等遊民を目指しつつ、歴史の深い手に惹かれる</small>
+                </a>
+                 <a href="http://sh21mysite.com/mystudy/index/index.php" class="prof-link">
+                    <div class="prof-index">
+                        <div class="prof-content-number google-font">02</div>
+                        <div class="prof-content">
+                            <h3>Time in History</h3>
+                            <small>An unending dialogue between the present and the past.</small>
+                        </div>
+                        <div class="prof-triangle"></div>
                     </div>
-                    <div class="prof-triangle"></div>
-                </div>
-                <div class="prof-index">
-                    <div class="prof-content-number google-font">03</div>
-                    <div class="prof-content">
-                        <a href="https://sh-revue.net/">Re:Vue</a>
-                        <small>余生におけるプログラミングのまとめ</small>
+                </a>
+                 <a href="https://sh-revue.net/" class="prof-link">
+                    <div class="prof-index">
+                        <div class="prof-content-number google-font">03</div>
+                        <div class="prof-content">
+                          <h3>Re:Vue</h3>
+                          <small>my anthology that expresses what I've learned from Information Technology.</small>
+                        </div>
+                        <div class="prof-triangle"></div>
                     </div>
-                    <div class="prof-triangle"></div>
-                </div>
+                </a>
             </div>
        </div>
     </div>
 </section>
-<section id="trip-wrapper" class="fade-in fade-in-left box">
+<section id="trip-wrapper" class="fade-in fade-in-right box">
   <div  class="title trip">Trip</div>
   <div class="contents">
     <div class="trip-image-area pc">
       <div><img src="../common/img/trip.png" class="trip-img"></div>
-      <div class='arrow_box_left'>You can’t get away from yourself by moving from one place to another.<br>Ernest Hemingway</div>
+      <div class='arrow_box_left'>You can’t get away from yourself by moving from one place to another.<br>(Ernest Hemingway)</div>
     </div>
     <div class="trip-lineup">
       <ul class="filter">
@@ -101,34 +113,19 @@
       </ul>
     </div>
     <div class="modal-area">
-        <?php foreach ($result as $list){?>
-            <div class="trip-content" data-category="<?php echo htmlspecialchars($list["en_area"]);?>">
-              <a href="" class="modalOpen" data-target="<?php echo htmlspecialchars($list["id"]);?>">
-                <img class="trip-image" src="../common/img/main/trip/<?php echo htmlspecialchars($list["image"]);?>" alt="画像">
+        <?php foreach ($trips as $trip){?>
+            <div class="trip-content" data-category="<?php echo htmlspecialchars($trip["en_area"]);?>">
+              <a href="" id="modalOpen" class="modalOpen" data-target="<?php echo htmlspecialchars($trip["id"]);?>">
+                <img class="trip-image" src="../common/img/main/trip/<?php echo htmlspecialchars($trip["image"]);?>" alt="画像">
               </a>
             </div>
-            <!--モーダル画面-->
-            <div class="modal-main" id="<?php echo htmlspecialchars($list["id"]);?>">
-              <div class="modal-inner">
-                <div class="modal-content">
-                  <p class="modal-title"><?php echo htmlspecialchars($list["title"]);?></p>
-                  <img class="modal-image" src="../common/img/main/trip/<?php echo htmlspecialchars($list["image"]);?>" alt="画像">
-                  <div class="trip-text">
-                    <span class="trip-modal-name"><?php echo htmlspecialchars($list["prefecture"]);?></span>
-                    <span class="trip-modal-date"><?php echo htmlspecialchars($list["date"]);?></span>
-                  </div>
-                  <p class="modal-text"><?php echo htmlspecialchars($list["comment"]);?></p>
-                  <a href="" class="modalClose">Close</a>
-                </div>
-              </div>
-            </div>
-          <?php }?>
-      </div>
+        <?php }?>
+    </div>
       <div><img src="../common/img/trip.png" class="trip-img sp"></div>
   </div>
 </section>
 <!--------------------Music------------------------>
-<section id="music-wrapper" class="fade-in fade-in-right box">
+<section id="music-wrapper" class="fade-in fade-in-left box">
     <div class="title music">Music</div>
     <div class="contents">
         <div class="tab-panel">
@@ -169,41 +166,37 @@
     <div class="contents">
         <div class="grid-divide book">
             <div class="grid-left">
-                  <div class="book-box active box-design">
-                    <div class="book-text">
-                      <div class="book-title">大河の一滴</div>
-                      <div class="book-note">
-                          <p class="book-about about-text">「人はみな大河の一滴」である。見様によれば、マイナス思考ともとれる言葉であるが、著者はその極限まで降りていって、絶望の底から見える光を見た時の驚きこそがプラス思考だという。このようにAと非Aは共存できないという西洋型の「対立」の形式ではなく、＜中庸＞だとか＜寛容＞が生きることに必要であるという。人間のこころの光と影―二律背反な感情―が共存していて、まずはその混沌を認めることから始める。そこから如何にして、融通無碍の境地をつくることが出来るか、この過程こそが生命力の強さなのだと教えてくれる。個々のこころの中の葛藤をそのまま受け止め、行動や考え方の自由へと昇華させる。それにはマイナス思考も欠かせぬものになるし、邪魔な存在ではないのだと考えさせられる。1998年に書かれたこの本であるが、現代においても人間の知性を育てる感情とか情念、こころの豊かさを醸成していくことが課題であることを痛感してならない。</p>
+                <?php foreach ($books1 as $book){?>
+                    <div class="book-box active box-design">
+                      <div class="book-text">
+                        <div class="book-title"><?php echo htmlspecialchars($book["title"]);?></div>
+                        <div class="book-note">
+                            <p class="book-about about-text"><?php echo htmlspecialchars($book["comment"]);?></p>
+                        </div>
+                        <p class="book-author about-text"><?php echo htmlspecialchars($book["author"]);?></p>
+                        <p class="book-year about-text"><?php echo htmlspecialchars($book["year"]);?>年</p>
+                        <p class="book-press about-text"><?php echo htmlspecialchars($book["press"]);?></p>
                       </div>
-                      <p class="book-author about-text">五木寛之</p>
-                      <p class="book-year   about-text">1999年(文庫）</p>
                     </div>
-                  </div>
-                  <div class="book-box">
-                    <div class="book-text">
-                      <div class="book-title">胸懐</div>
-                      <div class="book-note">
-                          <p class="book-about about-text">『胸懐』はTAKUROの自伝であると同時にGLAYが歩んできた軌跡を綴ったもの。「家族」との音楽体験、GLAYを通じた、様々な「仲間」との出会い、「東京」でメジャーデビューを果たし、成功や「幸福」を手にしてきたこと、その裏腹にあったTAKUROと彼女との間の「喪失」などの実話が赤裸々に綴られている。中でも彼の「永遠」に対する想いは私の心を掴んで離さない。TAKUROによれば、どんな幸せも永遠には続かないし、人はそれを願うから不幸なのだと。だが、それが「一瞬の永遠」であるとしたら人生は輝かしいものになるのだと。私は「一瞬の永遠」はひたすら現実を意味しているように思えた。人は幸せを失うまいと恐れてしまい、やがて自分の手で握りつぶしてしまう。ならばいっそ、そのまま受け入れてみるが良いというのだが、それは失うことの残酷さを享受しなければならないということでもある。このように「生」のリアリティを感じさせてくれる点にこの本の魅力がある。</p>
+                <?php }?>
+                <?php foreach ($books2 as $book){?>
+                    <div class="book-box">
+                      <div class="book-text">
+                        <div class="book-title"><?php echo htmlspecialchars($book["title"]);?></div>
+                        <div class="book-note">
+                            <p class="book-about about-text"><?php echo htmlspecialchars($book["comment"]);?></p>
+                        </div>
+                        <p class="book-author about-text"><?php echo htmlspecialchars($book["author"]);?></p>
+                        <p class="book-year about-text"><?php echo htmlspecialchars($book["year"]);?>年</p>
+                        <p class="book-press about-text"><?php echo htmlspecialchars($book["press"]);?></p>
                       </div>
-                      <p class="book-author about-text">TAKURO</p>
-                      <p class="book-year   about-text">2003年</p>
                     </div>
-                  </div>
-                  <div class="book-box">
-                    <div class="book-text">
-                      <div class="book-title">失敗の本質 日本軍の組織論的研究</div>
-                      <div class="book-note">
-                          <p class="book-about about-text">大学時代の師である戸部良一先生が編者の著書。太平洋戦争における日本軍の組織的な研究でありながら、ビジネス文書として読まれることも多い。軍事において、作戦目的の多義性や不明確性が戦略目的を曖昧なものにしてしまう。そのため、グランド・ストラテジー(grand strategy)の策定が重要である。それは組織が有するあらゆる資源をある目標に向かって調整し、指向することであり、その都度パフォーマンス・ギャップを把握することで組織学習を促すことが出来る。自己の行動をたえず変化する現実に照らし合わせ修正していくことで自己革新的な組織になることが出来るのだが、それには自己否定的な学習も伴う。学習とは知識の蓄積とは一概に言えず、「学習棄却」(unlearning;既存知識の棄却)を必要とするので、状況に応じた取捨選択が必要である。絶え間なく変化する状況を組織として十分に咀嚼し、それに対して指針を設定することが出来るかが、組織の善し悪しを決める。</p>
-                      </div>
-                      <p class="book-author about-text">戸部良一、寺本義也、鎌田伸一、杉之尾孝生、村井友秀、野中郁次郎</p>
-                      <p class="book-year   about-text">1991(文庫）</p>
-                    </div>
-                  </div>
-                  <div class="book-pagination">
-                      <div class="button prev">PREV</div>
-                      <div></div>
-                      <div class="button next">NEXT</div>
-                  </div>
+                <?php }?>
+                <div class="book-pagination">
+                    <div class="button prev">PREV</div>
+                    <div></div>
+                    <div class="button next">NEXT</div>
+                </div>
             </div>
             <div class="grid-right">
               <div>
@@ -226,8 +219,8 @@
        </div>
     </div>
 </section>
-<!-- Book -->
-<section id="contact-wrapper" class="fade-in fade-in-right box">
+<!-- contact -->
+<section id="contact-wrapper" class="fade-in fade-in-left box">
  <h2 class="title contact">Contact</h2>
   <div class="contents ">
     <form id="contactForm" action="./send_mail.php" method="POST">
@@ -269,35 +262,54 @@
 <?php include('../../mysite/common/footer.php'); ?>
 
 
-      <!--モーダル画面-->
-      <div class="modal-main" id="modal-starwars">
-        <div class="modal-inner">
+<!--モーダル画面-->
+<?php foreach ($trips as $trip){?>
+<div class="modal-main" id="<?php echo htmlspecialchars($trip["id"]);?>">
+  <div class="modal-inner">
+    <div class="modal-content">
+      <p class="modal-title"><?php echo htmlspecialchars($trip["title"]);?></p>
+      <img class="modal-image" src="../common/img/main/trip/<?php echo htmlspecialchars($trip["image"]);?>" alt="画像">
+      <div class="trip-text">
+        <span class="trip-modal-name"><?php echo htmlspecialchars($trip["prefecture"]);?></span>
+        <span class="trip-modal-date"><?php echo htmlspecialchars($trip["date"]);?></span>
+      </div>
+      <p class="modal-text"><?php echo htmlspecialchars($trip["comment"]);?></p>
+      <a href="" id="modalClose" class="modal-close" data-target="<?php echo htmlspecialchars($trip["id"]);?>">Close</a>
+    </div>
+  </div>
+</div>
+<?php }?>
 
-          <!-- Place in Body where you'd like intro to appear -->
-          <div class="star-wars-intro">
+<!--モーダル画面-->
+<div class="modal-main" id="modal-starwars">
+  <div class="modal-inner">
 
-            <!-- Blue Intro Text -->
-            <p class="intro-text">
-              A long time ago in a galaxy far,<br>far away....
+    <!-- Place in Body where you'd like intro to appear -->
+    <div class="star-wars-intro">
+
+      <!-- Blue Intro Text -->
+      <p class="intro-text">
+        A long time ago in a galaxy far,<br>far away....
+      </p>
+
+      <!-- Logo Image or Text goes in here -->
+      <h2 class="main-logo">
+        <img src="../common/img/main/starwars/icons8-star-wars-480.png">
+      </h2>
+
+      <!-- All Scrolling Content Goes in here -->
+      <div class="main-content" style="width:100%; height:1500px;">
+        <div class="title-content">
+          <p class="content-header">EPISODE V<br>The Nerd Force Awakens</p><br>
+
+
+            <p class="content-body">It’s dark time. Although we escaped the onslaught of the COVID-19 army, my descent into madness had been begun. I was not as strong as I wanted to be, and one by one, the tiny soldiers who were my comrades disappeared somewhere. And I got a stomach ache from eating bad apple.<br><br>In my lurking place, I was to able to managed to survive, although the situation there has also been difficult to live with due to various alien speculations. But because of this situation, I have been able to deepen my dialogue with the Force. I have come to understand that the Force is a dialogue between light and darkness.<br><br> In order to apply the knowledge I have gained through my training in the right direction, I have decided to make the current situation "null".In other words, it's time to change your environment with the words freedom only helps you say goodbye...
             </p>
-
-            <!-- Logo Image or Text goes in here -->
-            <h2 class="main-logo">
-              <img src="../common/img/main/starwars/icons8-star-wars-480.png">
-            </h2>
-
-            <!-- All Scrolling Content Goes in here -->
-            <div class="main-content" style="width:100%; height:1500px;">
-              <div class="title-content">
-                <p class="content-header">EPISODE V<br>Vampire Strikes Back</p><br>
-
-                  <p class="content-body">In the year MMXX, the invasion of the COVID-19 army has forced a change in lifestyle. A young man bitten by a vampire at the age of 20 is training hard every day to awaken "The NERD FORCE". However, Impulse of unknown cause flew him into the wilderness. He only weighs the equivalent of three apples. Confronted with his own dark side, he was forced to travel in search of a new base. While the world is surrounded by the horrors of the COVID-19 army, he searches for a place where his own will shows, but he has yet to find that freedom. It seems that it will take some time for the Force to awaken. However, hope was not lost. At a relay station, he found documents leading to Force Awakening.It was difficult to handle, but he made it his skill before facing the COVID-19 army again, and waited for the time to fight back.
-                  </p>
-                <!-- button or link or whatever
-                <p></p>
-                <a  class="space-button">profile</a>-->
-              </div>
-            </div>
-          </div>
-      　</div> <!-- modal-inner -->
-   　 </div><!--modal-main-->
+          <!-- button or link or whatever
+          <p></p>
+          <a  class="space-button">profile</a>-->
+        </div>
+      </div>
+    </div>
+　</div> <!-- modal-inner -->
+　 </div><!--modal-main-->
