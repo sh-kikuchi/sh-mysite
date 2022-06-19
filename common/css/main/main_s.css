@@ -44,22 +44,27 @@ common: layout
 
 .title.profile {
   filter: drop-shadow(10px 10px 0 #83BAB9);
+  transform: translateZ(0);
 }
 
 .title.trip {
   filter: drop-shadow(10px 10px 0 #FCF2DD);
+  transform: translateZ(0);
 }
 
 .title.music {
   filter: drop-shadow(10px 10px 0 #C9C2B0);
+  transform: translateZ(0);
 }
 
 .title.book {
   filter: drop-shadow(10px 10px 0 #DD8874);
+  transform: translateZ(0);
 }
 
 .title.contact {
   filter: drop-shadow(10px 10px 0 #6E6E6E);
+  transform: translateZ(0);
 }
 
 .contents {
@@ -79,6 +84,12 @@ body {
 /* section毎の余白調整 */
 section {
   padding-top: 25px;
+}
+
+/* リンクの下線・色 */
+a {
+  color: #000000;
+  text-decoration: none !important;
 }
 
 /*---------------------------
@@ -589,7 +600,7 @@ trip
   margin-bottom: 20px;
 }
 
-.modalClose {
+.modal-close {
   display: inline-block;
   padding: 20px 40px;
   background-color: #00afcc;
@@ -598,7 +609,7 @@ trip
   text-decoration: none;
 }
 
-.modalClose:hover {
+.modal-close:hover {
   color: #00afcc;
   background-color: #e4e0e1;
   transition: 0.6s;
